@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amours de Goldinous</title>
+
+<style>
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Georgia', serif;
+  margin: 0;
+  background-color: #faf7f2;
+  color: #3e2f1c;
+}
+
+/* HEADER PRO */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35);
+  top: 0;
+  left: 0;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-size: 42px;
+  margin: 0;
+}
+
+.hero-text p {
+  margin-top: 10px;
+}
+
+/* MENU */
+.menu-btn {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+  z-index: 2000;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background: #b88a44;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  transition: 0.3s;
+  z-index: 1500;
+}
+
+.menu a {
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.menu.active { right: 0; }
+
+/* SECTIONS */
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  color: #b88a44;
+  border-bottom: 2px solid #e5d3b3;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  padding: 20px;
+  width: 260px;
+  text-align: center;
+  border: 3px solid #f1e3c6;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 15px;
+  border: 4px solid #f1e3c6;
+}
+
+/* GALERIE */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 15px;
+  border: 4px solid #f1e3c6;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* BLOCS */
+.puppies {
+  background: #fdf1df;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  border: 2px solid #e5d3b3;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.buttons a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  background: #b88a44;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+  background-color: #3e2f1c;
+  color: #f1e3c6;
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+}
+
+/* PATTES */
+.paws {
+  font-size: 24px;
+  letter-spacing: 12px;
+  animation: walk 4s infinite linear;
+  display: inline-block;
+}
+
+@keyframes walk {
+  0% { transform: translateX(-20px); opacity: 0.3; }
+  50% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(20px); opacity: 0.3; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<div class="menu" id="menu">
+  <a href="#">Accueil</a>
+  <a href="#golden">Le Golden Retriever</a>
+  <a href="#chiens">Mes chiens</a>
+  <a href="#portees">Portées</a>
+  <a href="#chiots">Chiots disponibles</a>
+  <a href="#galerie">Galerie</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- HEADER -->
+<header class="hero">
+  <img src="images/chiens (21).jpg">
+  <div class="hero-text">
+    <h1>Amours de Goldinous</h1>
+    <p>Élevage familial de Golden Retriever</p>
+  </div>
+</header>
+
+<section>
+  <h2>Bienvenue</h2>
+  <p>Bienvenue dans notre petit élevage familial de Golden Retriever.</p>
+  <div class="buttons">
+    <a href="https://www.facebook.com/profile.php?id=61555150700118" target="_blank">Page Facebook</a>
+  </div>
+</section>
+
+<section id="golden">
+  <h2>Le Golden Retriever</h2>
+  <p>Le Golden Retriever est un chien doux, intelligent et très sociable.</p>
+</section>
+
+<section id="chiens">
+  <h2>Nos chiens</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="images/chiens (15).jpg">
+      <h3>Jack, le papa</h3>
+    </div>
+    <div class="card">
+      <img src="images/chiens (25).jpg">
+      <h3>Kali, la maman</h3>
+    </div>
+    <div class="card">
+      <img src="images/chiens (26).jpg">
+      <h3>Melba</h3>
+    </div>
+    <div class="card">
+      <img src="images/chiens (28).jpg">
+      <h3>Chanel</h3>
+    </div>
+  </div>
+</section>
+
+<section id="portees">
+  <h2>Portées</h2>
+  <p>Prochaine portée prévue vers le 21 avril 2026.</p>
+</section>
+
+<section id="chiots">
+  <h2>Chiots disponibles</h2>
+  <div class="puppies">
+    <p>Mise à jour dès la naissance.</p>
+  </div>
+</section>
+
+<section id="galerie">
+  <h2>Galerie</h2>
+  <div class="gallery">
+    <img src="images/chiens (12).jpg">
+    <img src="images/chiens (18).jpg">
+    <img src="images/chiens (2).jpg">
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Contact : amoursdegoldinous@gmail.com</p>
+</section>
+
+<footer>
+  <strong>Amours de Goldinous - Elevage familial - Braives</strong><br>
+  🐾 🐾 🐾 🐾 🐾
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+
+const sections = document.querySelectorAll("section");
+
+function reveal() {
+  const trigger = window.innerHeight * 0.85;
+
+  sections.forEach(section => {
+    const top = section.getBoundingClientRect().top;
+
+    if (top < trigger) {
+      section.classList.add("visible");
+    }
+  });
+}
+
+window.addEventListener("scroll", reveal);
+reveal();
+</script>
+
+</body>
+</html>
