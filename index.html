@@ -18,9 +18,7 @@ body {
 /* HEADER */
 header {
   position: relative;
-  width: 100%;
-  height: 350px;
-  overflow: hidden;
+  height: 300px;
 }
 
 header img.bg {
@@ -30,23 +28,22 @@ header img.bg {
 }
 
 header .overlay {
-  position: absolute;
+  position:absolute;
   top:0; left:0;
   width:100%; height:100%;
   background: rgba(0,0,0,0.3);
 }
 
-header .content {
+/* LOGO TOP LEFT */
+.logo-top {
   position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  text-align:center;
+  top:10px;
+  left:15px;
+  z-index:2000;
 }
 
-header .logo {
-  max-width:300px;
-  width:80%;
+.logo-top img {
+  height:60px;
 }
 
 /* MENU */
@@ -79,14 +76,13 @@ header .logo {
   padding: 15px;
   text-decoration: none;
   font-weight: bold;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 .menu.active { right: 0; }
 
 /* SECTIONS */
 section {
-  padding: 40px 20px;
+  padding: 25px 15px;
   max-width: 1000px;
   margin: auto;
 }
@@ -95,31 +91,44 @@ h2 {
   color: #b88a44;
   border-bottom: 2px solid #e5d3b3;
   display: inline-block;
-  padding-bottom: 5px;
+}
+
+/* FACEBOOK BUTTON */
+.fb-btn {
+  display:inline-block;
+  background:#1877f2;
+  color:white;
+  padding:12px 20px;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:bold;
 }
 
 /* CARDS */
 .cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;
   justify-content: center;
 }
 
 .card {
   background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  padding: 15px;
-  width: 220px;
-  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  width: 200px;
+  overflow: hidden;
 }
 
 .card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 10px;
+}
+
+.card h3 {
+  text-align:center;
+  padding:10px;
 }
 
 /* GALERIE */
@@ -131,32 +140,23 @@ h2 {
 }
 
 .gallery img {
-  width: 100%;
-  max-width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  cursor: pointer;
-  transition: transform 0.3s;
+  border-radius:10px;
+  box-shadow:0 5px 10px rgba(0,0,0,0.2);
+  cursor:pointer;
 }
 
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-/* POPUP IMAGE */
+/* LIGHTBOX */
 .lightbox {
-  position: fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background: rgba(0,0,0,0.9);
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.9);
   display:none;
   justify-content:center;
   align-items:center;
-  z-index:3000;
 }
 
 .lightbox img {
@@ -164,25 +164,13 @@ h2 {
   max-height:90%;
 }
 
-/* BOUTONS */
-.buttons a {
-  display: inline-block;
-  margin: 10px;
-  padding: 12px 20px;
-  background: #b88a44;
-  color: white;
-  text-decoration: none;
-  border-radius: 25px;
-  font-weight: bold;
-}
-
 /* FOOTER */
 footer {
-  background-color: #3e2f1c;
-  color: #f1e3c6;
-  text-align: center;
-  padding: 30px;
-  margin-top: 40px;
+  background:#3e2f1c;
+  color:#f1e3c6;
+  text-align:center;
+  padding:20px;
+  margin-top:30px;
 }
 </style>
 </head>
@@ -193,9 +181,7 @@ footer {
 
 <div class="menu" id="menu">
   <a href="#">Accueil</a>
-  <a href="#golden">Le Golden Retriever</a>
   <a href="#chiens">Nos chiens</a>
-  <a href="#portees">Portées</a>
   <a href="#galerie">Galerie</a>
   <a href="#contact">Contact</a>
 </div>
@@ -204,25 +190,18 @@ footer {
   <img src="images/chiens (21).jpg" class="bg">
   <div class="overlay"></div>
 
-  <div class="content">
-    <img src="images/logo.png" class="logo">
+  <div class="logo-top">
+    <img src="images/logo.png">
   </div>
 </header>
 
 <section>
   <h2>Bienvenue</h2>
-  <p>Bienvenue dans notre petit élevage familial de Golden Retriever.</p>
+  <p>Bienvenue dans notre élevage familial de Golden Retriever.</p>
 
-  <div class="buttons">
-    <a href="https://www.facebook.com/profile.php?id=61555150700118" target="_blank">
-      Facebook
-    </a>
-  </div>
-</section>
-
-<section id="golden">
-  <h2>Le Golden Retriever</h2>
-  <p>Chien doux, intelligent et très sociable. Idéal pour les familles.</p>
+  <a href="https://www.facebook.com/profile.php?id=61555150700118" target="_blank" class="fb-btn">
+    Facebook
+  </a>
 </section>
 
 <section id="chiens">
@@ -251,42 +230,35 @@ footer {
   </div>
 </section>
 
-<section id="portees">
-  <h2>Portées</h2>
-  <p>Prochaine portée prévue en avril 2026.</p>
-</section>
-
 <section id="galerie">
   <h2>Galerie</h2>
 
   <div class="gallery">
-    <img src="images/chiens (12).jpg" onclick="openImg(this)">
+    <img src="images/chiens (5).jpg" onclick="openImg(this)">
     <img src="images/chiens (18).jpg" onclick="openImg(this)">
     <img src="images/chiens (2).jpg" onclick="openImg(this)">
     <img src="images/chiens (3).jpg" onclick="openImg(this)">
-    <img src="images/chiens (4).jpg" onclick="openImg(this)">
   </div>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
 
-  <form style="max-width:500px;margin:auto;">
-    <input type="text" placeholder="Nom" required style="width:100%;padding:10px;margin:10px 0;">
-    <input type="email" placeholder="Email" required style="width:100%;padding:10px;margin:10px 0;">
-    <textarea placeholder="Message" style="width:100%;padding:10px;margin:10px 0;"></textarea>
+  <form style="max-width:400px;margin:auto;">
+    <input type="text" placeholder="Nom" style="width:100%;margin:10px 0;padding:10px;">
+    <input type="email" placeholder="Email" style="width:100%;margin:10px 0;padding:10px;">
+    <textarea placeholder="Message" style="width:100%;margin:10px 0;padding:10px;"></textarea>
 
-    <button style="background:#b88a44;color:white;padding:12px 20px;border:none;border-radius:25px;">
+    <button style="background:#b88a44;color:white;padding:10px 20px;border:none;border-radius:20px;">
       Envoyer
     </button>
   </form>
 </section>
 
 <footer>
-  <p>Amours de Goldinous</p>
+  🐾 Amours de Goldinous 🐾
 </footer>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeImg()">
   <img id="lightbox-img">
 </div>
