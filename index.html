@@ -30,6 +30,15 @@ body {
   filter: brightness(70%);
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, #faf7f2, transparent);
+}
+
 .hero-content {
   position: absolute;
   top: 50%;
@@ -53,7 +62,7 @@ body {
   display: inline-block;
   margin-top: 15px;
   padding: 12px 25px;
-  background: #b88a44;
+  background: linear-gradient(135deg, #c89b5c, #a07634);
   color: white;
   text-decoration: none;
   border-radius: 30px;
@@ -63,7 +72,6 @@ body {
 }
 
 .cta:hover {
-  background: #a07634;
   transform: translateY(-2px);
 }
 
@@ -187,11 +195,10 @@ h2 {
   width: 50px;
   height: 50px;
   background: #b88a44;
-  color: white;
   border-radius: 50%;
-  line-height: 50px;
-  font-size: 22px;
-  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ===== FOOTER ===== */
@@ -201,6 +208,12 @@ footer {
   text-align: center;
   padding: 25px;
   margin-top: 40px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width:600px) {
+  .hero { height: 220px; }
+  .hero h1 { font-size: 22px; }
 }
 </style>
 </head>
@@ -232,7 +245,9 @@ footer {
   <p>Bienvenue dans notre petit élevage familial de Golden Retriever.</p>
 
   <div class="socials">
-    <a href="https://www.facebook.com/profile.php?id=61555150700118" target="_blank">f</a>
+    <a href="https://www.facebook.com/profile.php?id=61555150700118" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="24">
+    </a>
   </div>
 </section>
 
@@ -248,7 +263,17 @@ footer {
 
 <section id="portees">
   <h2>Portées</h2>
-  <p>Prochaine portée prévue avril 2026.</p>
+  <p>La prochaine portée est prévue vers avril 2026.</p>
+</section>
+
+<section>
+  <h2>Pourquoi choisir notre élevage ?</h2>
+  <p>
+    🐾 Chiots élevés en famille<br>
+    🐾 Socialisés dès la naissance<br>
+    🐾 Parents visibles sur place<br>
+    🐾 Suivi et conseils à vie
+  </p>
 </section>
 
 <section id="galerie">
