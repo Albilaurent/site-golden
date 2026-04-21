@@ -13,90 +13,60 @@ body {
   margin: 0;
   background-color: #faf7f2;
   color: #3e2f1c;
-  line-height: 1.6;
 }
 
-/* ===== HERO ===== */
-.hero {
+/* HEADER */
+header {
   position: relative;
-  height: 280px;
+  width: 100%;
+  height: 350px;
   overflow: hidden;
 }
 
-.hero-img {
+header img.bg {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(70%);
 }
 
-.hero::after {
-  content: "";
+header .overlay {
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100px;
-  background: linear-gradient(to top, #faf7f2, transparent);
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.3);
 }
 
-.hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
+header .content {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-align:center;
 }
 
-.hero h1 {
-  font-size: 28px;
-  margin: 0;
+header .logo {
+  max-width:300px;
+  width:80%;
 }
 
-.hero p {
-  margin: 10px 0;
-}
-
-/* ===== CTA ===== */
-.cta {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 25px;
-  background: linear-gradient(135deg, #c89b5c, #a07634);
-  color: white;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: bold;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  transition: 0.3s;
-}
-
-.cta:hover {
-  transform: translateY(-2px);
-}
-
-/* ===== MENU ===== */
+/* MENU */
 .menu-btn {
   position: fixed;
   top: 15px;
   right: 20px;
-  font-size: 26px;
+  font-size: 28px;
   cursor: pointer;
   color: #fff;
-  background: rgba(0,0,0,0.4);
-  padding: 8px 12px;
-  border-radius: 10px;
   z-index: 2000;
 }
 
 .menu {
   position: fixed;
   top: 0;
-  right: -260px;
-  width: 260px;
+  right: -250px;
+  width: 250px;
   height: 100%;
-  backdrop-filter: blur(10px);
-  background: rgba(184, 138, 68, 0.95);
+  background: #b88a44;
   display: flex;
   flex-direction: column;
   padding-top: 60px;
@@ -112,108 +82,107 @@ body {
   border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-.menu a:hover {
-  background: rgba(255,255,255,0.1);
-}
-
 .menu.active { right: 0; }
 
-/* ===== SECTIONS ===== */
+/* SECTIONS */
 section {
-  padding: 50px 15px;
+  padding: 40px 20px;
   max-width: 1000px;
   margin: auto;
 }
 
 h2 {
   color: #b88a44;
-  margin-bottom: 20px;
   border-bottom: 2px solid #e5d3b3;
   display: inline-block;
+  padding-bottom: 5px;
 }
 
-/* ===== CARDS ===== */
+/* CARDS */
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 .card {
   background: #fff;
   border-radius: 15px;
-  padding: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  padding: 15px;
+  width: 220px;
   text-align: center;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
 }
 
 .card img {
   width: 100%;
-  height: 150px;
+  height: 200px;
   object-fit: cover;
   border-radius: 10px;
-  cursor: pointer;
 }
 
-/* ===== GALERIE ===== */
+/* GALERIE */
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
 }
 
 .gallery img {
   width: 100%;
-  height: 120px;
+  max-width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
 }
 
-/* ===== PUPPIES ===== */
-.puppies {
-  background: #fdf1df;
-  padding: 20px;
-  border-radius: 15px;
-  text-align: center;
+.gallery img:hover {
+  transform: scale(1.05);
 }
 
-/* ===== SOCIAL ===== */
-.socials {
-  text-align: center;
-  margin-top: 20px;
+/* POPUP IMAGE */
+.lightbox {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.9);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:3000;
 }
 
-.socials a {
+.lightbox img {
+  max-width:90%;
+  max-height:90%;
+}
+
+/* BOUTONS */
+.buttons a {
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  margin: 10px;
+  padding: 12px 20px;
   background: #b88a44;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer {
   background-color: #3e2f1c;
   color: #f1e3c6;
   text-align: center;
-  padding: 25px;
+  padding: 30px;
   margin-top: 40px;
-}
-
-/* ===== MOBILE ===== */
-@media (max-width:600px) {
-  .hero { height: 220px; }
-  .hero h1 { font-size: 22px; }
 }
 </style>
 </head>
@@ -231,12 +200,12 @@ footer {
   <a href="#contact">Contact</a>
 </div>
 
-<header class="hero">
-  <img src="images/chiens (21).jpg" class="hero-img">
-  <div class="hero-content">
-    <h1>Amours de Goldinous</h1>
-    <p>Élevage familial de Golden Retriever</p>
-    <a href="#contact" class="cta">Réserver un chiot</a>
+<header>
+  <img src="images/chiens (21).jpg" class="bg">
+  <div class="overlay"></div>
+
+  <div class="content">
+    <img src="images/logo.png" class="logo">
   </div>
 </header>
 
@@ -244,81 +213,97 @@ footer {
   <h2>Bienvenue</h2>
   <p>Bienvenue dans notre petit élevage familial de Golden Retriever.</p>
 
-  <div class="socials">
+  <div class="buttons">
     <a href="https://www.facebook.com/profile.php?id=61555150700118" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="24">
+      Facebook
     </a>
   </div>
 </section>
 
+<section id="golden">
+  <h2>Le Golden Retriever</h2>
+  <p>Chien doux, intelligent et très sociable. Idéal pour les familles.</p>
+</section>
+
 <section id="chiens">
   <h2>Nos chiens</h2>
+
   <div class="cards">
-    <div class="card"><img src="images/chiens (15).jpg"><h3>Jack</h3></div>
-    <div class="card"><img src="images/chiens (25).jpg"><h3>Kali</h3></div>
-    <div class="card"><img src="images/chiens (26).jpg"><h3>Melba</h3></div>
-    <div class="card"><img src="images/chiens (28).jpg"><h3>Chanel</h3></div>
+    <div class="card">
+      <img src="images/chiens (15).jpg">
+      <h3>Jack</h3>
+    </div>
+
+    <div class="card">
+      <img src="images/chiens (25).jpg">
+      <h3>Kali</h3>
+    </div>
+
+    <div class="card">
+      <img src="images/chiens (26).jpg">
+      <h3>Melba</h3>
+    </div>
+
+    <div class="card">
+      <img src="images/chiens (28).jpg">
+      <h3>Chanel</h3>
+    </div>
   </div>
 </section>
 
 <section id="portees">
   <h2>Portées</h2>
-  <p>La prochaine portée est prévue vers avril 2026.</p>
-</section>
-
-<section>
-  <h2>Pourquoi choisir notre élevage ?</h2>
-  <p>
-    🐾 Chiots élevés en famille<br>
-    🐾 Socialisés dès la naissance<br>
-    🐾 Parents visibles sur place<br>
-    🐾 Suivi et conseils à vie
-  </p>
+  <p>Prochaine portée prévue en avril 2026.</p>
 </section>
 
 <section id="galerie">
   <h2>Galerie</h2>
+
   <div class="gallery">
-    <img src="images/chiens (5).jpg">
-    <img src="images/chiens (18).jpg">
-    <img src="images/chiens (2).jpg">
-    <img src="images/chiens (3).jpg">
+    <img src="images/chiens (12).jpg" onclick="openImg(this)">
+    <img src="images/chiens (18).jpg" onclick="openImg(this)">
+    <img src="images/chiens (2).jpg" onclick="openImg(this)">
+    <img src="images/chiens (3).jpg" onclick="openImg(this)">
+    <img src="images/chiens (4).jpg" onclick="openImg(this)">
   </div>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
-  <form style="max-width:400px;margin:auto;">
-    <input type="text" placeholder="Nom" required style="width:100%;padding:10px;margin:5px 0;">
-    <input type="email" placeholder="Email" required style="width:100%;padding:10px;margin:5px 0;">
-    <textarea placeholder="Message" style="width:100%;padding:10px;margin:5px 0;"></textarea>
-    <button style="background:#b88a44;color:white;padding:10px;border:none;border-radius:20px;width:100%;">
+
+  <form style="max-width:500px;margin:auto;">
+    <input type="text" placeholder="Nom" required style="width:100%;padding:10px;margin:10px 0;">
+    <input type="email" placeholder="Email" required style="width:100%;padding:10px;margin:10px 0;">
+    <textarea placeholder="Message" style="width:100%;padding:10px;margin:10px 0;"></textarea>
+
+    <button style="background:#b88a44;color:white;padding:12px 20px;border:none;border-radius:25px;">
       Envoyer
     </button>
   </form>
 </section>
 
 <footer>
-  Amours de Goldinous © 2026
+  <p>Amours de Goldinous</p>
 </footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeImg()">
+  <img id="lightbox-img">
+</div>
 
 <script>
 function toggleMenu() {
   document.getElementById("menu").classList.toggle("active");
 }
 
-document.querySelectorAll(".gallery img, .card img").forEach(img => {
-  img.onclick = () => {
-    let overlay = document.createElement("div");
-    overlay.style = "position:fixed;top:0;left:0;width:100%;height:100%;background:black;display:flex;align-items:center;justify-content:center;";
-    let big = document.createElement("img");
-    big.src = img.src;
-    big.style = "max-width:90%;max-height:90%;border-radius:10px;";
-    overlay.appendChild(big);
-    overlay.onclick = () => overlay.remove();
-    document.body.appendChild(overlay);
-  };
-});
+function openImg(img) {
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = img.src;
+}
+
+function closeImg() {
+  document.getElementById("lightbox").style.display = "none";
+}
 </script>
 
 </body>
