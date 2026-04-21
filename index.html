@@ -13,69 +13,82 @@ body {
   margin: 0;
   background-color: #faf7f2;
   color: #3e2f1c;
+  line-height: 1.6;
 }
 
-/* HEADER PRO */
+/* ===== HERO ===== */
 .hero {
   position: relative;
-  width: 100%;
-  height: 400px;
+  height: 280px;
   overflow: hidden;
 }
 
-.hero img {
+.hero-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(70%);
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.35);
-  top: 0;
-  left: 0;
-}
-
-.hero-text {
+.hero-content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
   text-align: center;
-  z-index: 2;
 }
 
-.hero-text h1 {
-  font-size: 42px;
+.hero h1 {
+  font-size: 28px;
   margin: 0;
 }
 
-.hero-text p {
-  margin-top: 10px;
+.hero p {
+  margin: 10px 0;
 }
 
-/* MENU */
+/* ===== CTA ===== */
+.cta {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
+  background: #b88a44;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.cta:hover {
+  background: #a07634;
+  transform: translateY(-2px);
+}
+
+/* ===== MENU ===== */
 .menu-btn {
   position: fixed;
   top: 15px;
   right: 20px;
-  font-size: 28px;
+  font-size: 26px;
   cursor: pointer;
   color: #fff;
+  background: rgba(0,0,0,0.4);
+  padding: 8px 12px;
+  border-radius: 10px;
   z-index: 2000;
 }
 
 .menu {
   position: fixed;
   top: 0;
-  right: -250px;
-  width: 250px;
+  right: -260px;
+  width: 260px;
   height: 100%;
-  background: #b88a44;
+  backdrop-filter: blur(10px);
+  background: rgba(184, 138, 68, 0.95);
   display: flex;
   flex-direction: column;
   padding-top: 60px;
@@ -91,47 +104,40 @@ body {
   border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-.menu.active { right: 0; }
-
-/* SECTIONS */
-section {
-  padding: 60px 20px;
-  max-width: 1000px;
-  margin: auto;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
+.menu a:hover {
+  background: rgba(255,255,255,0.1);
 }
 
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
+.menu.active { right: 0; }
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 50px 15px;
+  max-width: 1000px;
+  margin: auto;
 }
 
 h2 {
   color: #b88a44;
+  margin-bottom: 20px;
   border-bottom: 2px solid #e5d3b3;
   display: inline-block;
-  padding-bottom: 5px;
 }
 
-/* CARDS */
+/* ===== CARDS ===== */
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
 }
 
 .card {
   background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  padding: 20px;
-  width: 260px;
+  border-radius: 15px;
+  padding: 10px;
   text-align: center;
-  border: 3px solid #f1e3c6;
-  transition: transform 0.3s;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transition: 0.3s;
 }
 
 .card:hover {
@@ -140,76 +146,61 @@ h2 {
 
 .card img {
   width: 100%;
-  border-radius: 15px;
-  border: 4px solid #f1e3c6;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-/* GALERIE */
+/* ===== GALERIE ===== */
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
 }
 
 .gallery img {
   width: 100%;
-  max-width: 250px;
-  border-radius: 15px;
-  border: 4px solid #f1e3c6;
-  transition: transform 0.3s;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-/* BLOCS */
+/* ===== PUPPIES ===== */
 .puppies {
   background: #fdf1df;
-  border-radius: 20px;
-  padding: 25px;
+  padding: 20px;
+  border-radius: 15px;
   text-align: center;
-  border: 2px solid #e5d3b3;
 }
 
-.buttons {
+/* ===== SOCIAL ===== */
+.socials {
   text-align: center;
   margin-top: 20px;
 }
 
-.buttons a {
+.socials a {
   display: inline-block;
-  margin: 10px;
-  padding: 12px 20px;
+  width: 50px;
+  height: 50px;
   background: #b88a44;
   color: white;
+  border-radius: 50%;
+  line-height: 50px;
+  font-size: 22px;
   text-decoration: none;
-  border-radius: 25px;
-  font-weight: bold;
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer {
   background-color: #3e2f1c;
   color: #f1e3c6;
   text-align: center;
-  padding: 30px;
+  padding: 25px;
   margin-top: 40px;
-}
-
-/* PATTES */
-.paws {
-  font-size: 24px;
-  letter-spacing: 12px;
-  animation: walk 4s infinite linear;
-  display: inline-block;
-}
-
-@keyframes walk {
-  0% { transform: translateX(-20px); opacity: 0.3; }
-  50% { transform: translateX(0); opacity: 1; }
-  100% { transform: translateX(20px); opacity: 0.3; }
 }
 </style>
 </head>
@@ -221,71 +212,43 @@ footer {
 <div class="menu" id="menu">
   <a href="#">Accueil</a>
   <a href="#golden">Le Golden Retriever</a>
-  <a href="#chiens">Mes chiens</a>
+  <a href="#chiens">Nos chiens</a>
   <a href="#portees">Portées</a>
-  <a href="#chiots">Chiots disponibles</a>
   <a href="#galerie">Galerie</a>
   <a href="#contact">Contact</a>
 </div>
 
-<!-- HEADER -->
 <header class="hero">
-  <img src="images/chiens (21).jpg">
-  <div class="hero-text">
+  <img src="images/chiens (21).jpg" class="hero-img">
+  <div class="hero-content">
     <h1>Amours de Goldinous</h1>
     <p>Élevage familial de Golden Retriever</p>
+    <a href="#contact" class="cta">Réserver un chiot</a>
   </div>
 </header>
 
 <section>
   <h2>Bienvenue</h2>
   <p>Bienvenue dans notre petit élevage familial de Golden Retriever.</p>
-  <div class="buttons">
-    <a href="https://www.facebook.com/profile.php?id=61555150700118" target="_blank">Page Facebook</a>
+
+  <div class="socials">
+    <a href="https://www.facebook.com/profile.php?id=61555150700118" target="_blank">f</a>
   </div>
-</section>
-
-<section id="golden">
-  <h2>Le Golden Retriever</h2>
-  <p>Le Golden Retriever est un chien doux, intelligent et très sociable. Probablement l'une des races les plus populaires et reconnaissables et les plus appréciés, le Golden Retriever est extraverti, affectueux, enjoué. Il est probablement l'animal de compagnie idéal pour quiconque chercherait pour la première fois un compagnon à 4 pattes. Son attitude tolérante et le fait qu'il soit intelligent et docile (donc facile à éduquer) en font un excellent chien de famille pour les propriétaires expérimentés ou non.
-
-Vous ne pourrez cependant pas compter sur un Golden Retriever comme chien de garde, car il essaiera de se lier d'amitié avec toute personne qui s'approchera de lui. De plus, il adore être au centre de l'attention et s'épanouira avec un maître aimant qui pourra lui donner toute l'attention et l'affection dont il a besoin.
-
-Réputé pour son poil doré, brillant, plat ou ondulé et de longueur moyenne, le Golden Retriever a une expression amicale ; son corps est parfaitement symétrique. Avec son superbe pelage qui ondoie en frôlant le sol, il avance à longues foulées puissantes. À l'âge adulte, le mâle mesure entre 56 et 61 cm au garrot et pèse entre 30 et 34 kg. La femelle adulte mesure environ 51 à 56 cm et pèse entre 27 et 32 kg..</p>
 </section>
 
 <section id="chiens">
   <h2>Nos chiens</h2>
   <div class="cards">
-    <div class="card">
-      <img src="images/chiens (15).jpg">
-      <h3>Jack, le papa</h3>
-    </div>
-    <div class="card">
-      <img src="images/chiens (25).jpg">
-      <h3>Kali, la maman</h3>
-    </div>
-    <div class="card">
-      <img src="images/chiens (26).jpg">
-      <h3>Melba</h3>
-    </div>
-    <div class="card">
-      <img src="images/chiens (28).jpg">
-      <h3>Chanel</h3>
-    </div>
+    <div class="card"><img src="images/chiens (15).jpg"><h3>Jack</h3></div>
+    <div class="card"><img src="images/chiens (25).jpg"><h3>Kali</h3></div>
+    <div class="card"><img src="images/chiens (26).jpg"><h3>Melba</h3></div>
+    <div class="card"><img src="images/chiens (28).jpg"><h3>Chanel</h3></div>
   </div>
 </section>
 
 <section id="portees">
   <h2>Portées</h2>
-  <p>Prochaine portée prévue vers le 21 avril 2026.</p>
-</section>
-
-<section id="chiots">
-  <h2>Chiots disponibles</h2>
-  <div class="puppies">
-    <p>Mise à jour dès la naissance.</p>
-  </div>
+  <p>Prochaine portée prévue avril 2026.</p>
 </section>
 
 <section id="galerie">
@@ -294,17 +257,24 @@ Réputé pour son poil doré, brillant, plat ou ondulé et de longueur moyenne, 
     <img src="images/chiens (12).jpg">
     <img src="images/chiens (18).jpg">
     <img src="images/chiens (2).jpg">
+    <img src="images/chiens (3).jpg">
   </div>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
-  <p>Contact : amoursdegoldinous@gmail.com</p>
+  <form style="max-width:400px;margin:auto;">
+    <input type="text" placeholder="Nom" required style="width:100%;padding:10px;margin:5px 0;">
+    <input type="email" placeholder="Email" required style="width:100%;padding:10px;margin:5px 0;">
+    <textarea placeholder="Message" style="width:100%;padding:10px;margin:5px 0;"></textarea>
+    <button style="background:#b88a44;color:white;padding:10px;border:none;border-radius:20px;width:100%;">
+      Envoyer
+    </button>
+  </form>
 </section>
 
 <footer>
-  <strong>Amours de Goldinous - Elevage familial - Braives</strong><br>
-  🐾 🐾 🐾 🐾 🐾
+  Amours de Goldinous © 2026
 </footer>
 
 <script>
@@ -312,22 +282,18 @@ function toggleMenu() {
   document.getElementById("menu").classList.toggle("active");
 }
 
-const sections = document.querySelectorAll("section");
-
-function reveal() {
-  const trigger = window.innerHeight * 0.85;
-
-  sections.forEach(section => {
-    const top = section.getBoundingClientRect().top;
-
-    if (top < trigger) {
-      section.classList.add("visible");
-    }
-  });
-}
-
-window.addEventListener("scroll", reveal);
-reveal();
+document.querySelectorAll(".gallery img, .card img").forEach(img => {
+  img.onclick = () => {
+    let overlay = document.createElement("div");
+    overlay.style = "position:fixed;top:0;left:0;width:100%;height:100%;background:black;display:flex;align-items:center;justify-content:center;";
+    let big = document.createElement("img");
+    big.src = img.src;
+    big.style = "max-width:90%;max-height:90%;border-radius:10px;";
+    overlay.appendChild(big);
+    overlay.onclick = () => overlay.remove();
+    document.body.appendChild(overlay);
+  };
+});
 </script>
 
 </body>
