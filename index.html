@@ -159,6 +159,11 @@ h2 {
   font-size: 26px;
   text-decoration: none;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.floating-buttons a:hover {
+  transform: scale(1.1);
 }
 
 .whatsapp { background: #25D366; }
@@ -243,8 +248,6 @@ Bien qu’il puisse également quêter, ce n’est pas sa spécialité première
 
 </section>
 
-</section>
-
 <section id="chiens">
 <h2>Nos chiens</h2>
 <div class="cards">
@@ -278,8 +281,15 @@ Bien qu’il puisse également quêter, ce n’est pas sa spécialité première
 <input type="text" name="nom" placeholder="Nom" required>
 <input type="email" name="email" placeholder="Email" required>
 <textarea name="message" placeholder="Votre message" required></textarea>
+<input type="hidden" name="_captcha" value="false">
 
 <button type="submit">Envoyer</button>
+<p style="font-size:12px; text-align:center;">
+Nous vous répondrons rapidement par email.
+</p>
+
+<input type="hidden" name="_next" value="https://albilaurent.github.io/site-golden/#contact">
+<input type="hidden" name="_subject" value="Nouveau message du site Amours de Goldinous">
 
 </form>
 
