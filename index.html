@@ -107,6 +107,27 @@ h2 {
   object-fit: cover;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+
+/* LIGHTBOX */
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 15px;
 }
 
 /* CONTACT */
@@ -219,104 +240,59 @@ footer {
 <section id="golden" class="golden-section">
 <h2>Le Golden Retriever</h2>
 <p>Chien doux, intelligent et parfait pour la famille.</p>
- <p>Au-delà de sa gentillesse et de son caractère facile, qui en font un excellent chien d’assistance pour les personnes en situation de handicap, le Golden Retriever est également un remarquable chien de chasse.
-</p>
-
-<p>
-Utilisé principalement pour le rapport, il est un excellent nageur et possède un pelage naturellement imperméable. 
-Très attentif à son maître, il apprend rapidement et développe une relation de complicité forte.
-</p>
-
-<p>
-C’est un chien solide et rustique, capable de travailler dans toutes les conditions. 
-Sa puissance et sa détermination lui permettent d’évoluer efficacement dans les marais comme dans les broussailles.
-</p>
-  <p>
-Doté d’une excellente mémoire, il est capable de retrouver le gibier dans l’ordre de chute. 
-Bien qu’il puisse également quêter, ce n’est pas sa spécialité première.
-</p>
+<p>...</p>
 </section>
 
 <section id="histoire" class="golden-section">
 <h2>Histoire de la race</h2>
-<p>Race développée en Angleterre pour le rapport du gibier.</p>
-<p>L’origine exacte du Golden Retriever reste incertaine. Il pourrait provenir de chiens du Caucase ou de lignées sélectionnées en Angleterre.</p>
-
-<p>Développé comme chien rapporteur, il est reconnu officiellement en 1913.</p>
-
-<p>Très populaire aujourd’hui, il est apprécié pour ses qualités de travail et son caractère exceptionnel.</p>
-
+<p>...</p>
 </section>
 
 <section id="chiens">
 <h2>Nos chiens</h2>
 <div class="cards">
-<div class="card"><img src="images/chiens (15).jpg"><h3>Jack</h3></div>
-<div class="card"><img src="images/chiens (25).jpg"><h3>Kali</h3></div>
-<div class="card"><img src="images/chiens (26).jpg"><h3>Melba</h3></div>
-<div class="card"><img src="images/chiens (28).jpg"><h3>Chanel</h3></div>   
+<div class="card"><img src="images/chiens (15).jpg"></div>
+<div class="card"><img src="images/chiens (25).jpg"></div>
 </div>
 </section>
 
 <section id="galerie">
 <h2>Galerie</h2>
 <div class="gallery">
-<img src="images/chiens (18).jpg">
-<img src="images/chiens (2).jpg">
-<img src="images/chiens (3).jpg">
-<img src="images/chiens (4).jpg">
-<img src="images/chiens (10).jpg">
-<img src="images/chiens (20).jpg">
-<img src="images/chiens (21).jpg">
-<img src="images/chiens (24).jpg">
+<img src="images/chiens (18).jpg" onclick="openLightbox(this.src)">
+<img src="images/chiens (2).jpg" onclick="openLightbox(this.src)">
+<img src="images/chiens (3).jpg" onclick="openLightbox(this.src)">
+<img src="images/chiens (4).jpg" onclick="openLightbox(this.src)">
+<img src="images/chiens (10).jpg" onclick="openLightbox(this.src)">
+<img src="images/chiens (20).jpg" onclick="openLightbox(this.src)">
+<img src="images/chiens (21).jpg" onclick="openLightbox(this.src)">
+<img src="images/chiens (24).jpg" onclick="openLightbox(this.src)">
 </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-<h2>Contact</h2>
+<section id="contact">...</section>
 
-<form action="https://formspree.io/f/xqewgoww" method="POST" class="contact-form">
+<footer>...</footer>
 
-<input type="text" name="nom" placeholder="Nom" required>
-<input type="email" name="email" placeholder="Email" required>
-<textarea name="message" placeholder="Votre message" required></textarea>
-<input type="hidden" name="_captcha" value="false">
+<div class="floating-buttons">...</div>
 
-<button type="submit">Envoyer</button>
-<p style="font-size:12px; text-align:center;">
-Nous vous répondrons rapidement par email.
-</p>
-
-<input type="hidden" name="_next" value="https://albilaurent.github.io/site-golden/#contact">
-<input type="hidden" name="_subject" value="Nouveau message du site Amours de Goldinous">
-
-</form>
-
-</section>
-
-<footer>
-<div>🐾 Amours de Goldinous 🐾</div>
-<div class="paws">🐾 🐾 🐾 🐾 🐾</div>
-<div>Contact : amoursdegoldinous@gmail.com</div>
-<p>amours des goldinous @ 2026</p>
-</footer>
-
-<div class="floating-buttons">
-
-<a href="https://wa.me/32497642611?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20vos%20chiots" class="whatsapp" target="_blank">
-<i class="fab fa-whatsapp"></i>
-</a>
-
-<a href="https://www.facebook.com/profile.php?id=61555150700118" class="facebook" target="_blank">
-<i class="fab fa-facebook-f"></i>
-</a>
-
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
 </div>
 
 <script>
 function toggleMenu() {
   document.getElementById("menu").classList.toggle("active");
+}
+
+function openLightbox(src) {
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = src;
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
 }
 </script>
 
