@@ -2,7 +2,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <title>Amours de Goldinous</title>
 
 <style>
@@ -15,10 +17,8 @@ body {
   color: #3e2f1c;
 }
 
-/* HEADER */
 header { margin: 0; padding: 0; }
 
-/* MENU */
 .menu-btn {
   position: fixed;
   top: 15px;
@@ -51,7 +51,6 @@ header { margin: 0; padding: 0; }
 
 .menu.active { right: 0; }
 
-/* SECTIONS */
 section {
   padding: 30px 20px;
   max-width: 1000px;
@@ -64,7 +63,6 @@ h2 {
   display: inline-block;
 }
 
-/* GOLDEN */
 .golden-section {
   border: 2px solid #e5d3b3;
   border-radius: 20px;
@@ -72,7 +70,6 @@ h2 {
   margin-top: 20px;
 }
 
-/* CARTES */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -96,7 +93,6 @@ h2 {
   border-radius: 15px;
 }
 
-/* GALERIE */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -113,7 +109,35 @@ h2 {
   box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
-/* BOUTONS FIXES */
+/* CONTACT */
+.contact-form {
+  background: #fff;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.contact-form button {
+  background: #b88a44;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* BOUTONS */
 .floating-buttons {
   position: fixed;
   bottom: 20px;
@@ -140,7 +164,6 @@ h2 {
 .whatsapp { background: #25D366; }
 .facebook { background: #1877f2; }
 
-/* FOOTER */
 footer {
   background: #3e2f1c;
   color: #f1e3c6;
@@ -168,6 +191,7 @@ footer {
 <div class="menu" id="menu">
 <a href="#">Accueil</a>
 <a href="#golden">Le Golden Retriever</a>
+<a href="#histoire">Histoire de la race</a>
 <a href="#chiens">Nos chiens</a>
 <a href="#contact">Contact</a>
 </div>
@@ -182,62 +206,57 @@ footer {
 
 <section>
 <h2>Bienvenue</h2>
-
-<p>
-Bienvenue dans notre élevage familial de Golden Retriever, où chaque chien est élevé avec passion, amour et respect.
-Nos chiots grandissent dans un environnement chaleureux, entourés d’attention et de soins quotidiens.
-</p>
-
-<p>
-Tous nos chiots sont pucés, vermifugés, en ordre de vaccination et suivis par notre vétérinaire avant de rejoindre leur nouvelle famille.
-</p>
-
-<p>
-En raison de la forte demande, une liste de réservation est ouverte dès la naissance des chiots.
-Les premières personnes inscrites seront prioritaires pour le choix et la réservation.
-</p>
-
+<p>Bienvenue dans notre élevage familial passionné de Golden Retriever.</p>
+<p>Nos chiots sont élevés avec amour, pucés, vaccinés et suivis par notre vétérinaire.</p>
+<p>Une liste de réservation est ouverte dès la naissance.</p>
 </section>
 
 <section id="golden" class="golden-section">
 <h2>Le Golden Retriever</h2>
+<p>Chien doux, intelligent et parfait pour la famille.</p>
+ <p>Au-delà de sa gentillesse et de son caractère facile, qui en font un excellent chien d’assistance pour les personnes en situation de handicap, le Golden Retriever est également un remarquable chien de chasse.
+</p>
 
-<p>Le Golden Retriever est un chien doux, intelligent et très sociable.</p>
-<p>Idéal pour la vie de famille, il est affectueux et équilibré.</p>
-<p>Facile à éduquer, il convient à tous.</p>
+<p>
+Utilisé principalement pour le rapport, il est un excellent nageur et possède un pelage naturellement imperméable. 
+Très attentif à son maître, il apprend rapidement et développe une relation de complicité forte.
+</p>
+
+<p>
+C’est un chien solide et rustique, capable de travailler dans toutes les conditions. 
+Sa puissance et sa détermination lui permettent d’évoluer efficacement dans les marais comme dans les broussailles.
+</p>
+  <p>
+Doté d’une excellente mémoire, il est capable de retrouver le gibier dans l’ordre de chute. 
+Bien qu’il puisse également quêter, ce n’est pas sa spécialité première.
+</p>
+</section>
+
+<section id="histoire" class="golden-section">
+<h2>Histoire de la race</h2>
+<p>Race développée en Angleterre pour le rapport du gibier.</p>
+<p>L’origine exacte du Golden Retriever reste incertaine. Il pourrait provenir de chiens du Caucase ou de lignées sélectionnées en Angleterre.</p>
+
+<p>Développé comme chien rapporteur, il est reconnu officiellement en 1913.</p>
+
+<p>Très populaire aujourd’hui, il est apprécié pour ses qualités de travail et son caractère exceptionnel.</p>
+
+</section>
 
 </section>
 
 <section id="chiens">
 <h2>Nos chiens</h2>
-
 <div class="cards">
-<div class="card">
-<img src="images/chiens (15).jpg">
-<h3>Jack</h3>
+<div class="card"><img src="images/chiens (15).jpg"><h3>Jack</h3></div>
+<div class="card"><img src="images/chiens (25).jpg"><h3>Kali</h3></div>
+<div class="card"><img src="images/chiens (26).jpg"><h3>Melba</h3></div>
+<div class="card"><img src="images/chiens (28).jpg"><h3>Chanel</h3></div>   
 </div>
-
-<div class="card">
-<img src="images/chiens (25).jpg">
-<h3>Kali</h3>
-</div>
-
-<div class="card">
-<img src="images/chiens (26).jpg">
-<h3>Melba</h3>
-</div>
-
-<div class="card">
-<img src="images/chiens (28).jpg">
-<h3>Chanel</h3>
-</div>
-</div>
-
 </section>
 
 <section id="galerie">
 <h2>Galerie</h2>
-
 <div class="gallery">
 <img src="images/chiens (18).jpg">
 <img src="images/chiens (2).jpg">
@@ -248,29 +267,39 @@ Les premières personnes inscrites seront prioritaires pour le choix et la rése
 <img src="images/chiens (21).jpg">
 <img src="images/chiens (24).jpg">
 </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+
+<form action="https://formspree.io/f/xqewgoww" method="POST" class="contact-form">
+
+<input type="text" name="nom" placeholder="Nom" required>
+<input type="email" name="email" placeholder="Email" required>
+<textarea name="message" placeholder="Votre message" required></textarea>
+
+<button type="submit">Envoyer</button>
+
+</form>
 
 </section>
 
 <footer>
 <div>🐾 Amours de Goldinous 🐾</div>
 <div class="paws">🐾 🐾 🐾 🐾 🐾</div>
-<div>Contact : amoursdesgoldinous@gmail.com</div>
+<div>Contact : amoursdegoldinous@gmail.com</div>
 <p>amours des goldinous @ 2026</p>
 </footer>
 
-<!-- BOUTONS -->
 <div class="floating-buttons">
 
-<a href="https://wa.me/32497642611?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20vos%20chiots"
-   class="whatsapp"
-   target="_blank">
-  <i class="fab fa-whatsapp"></i>
+<a href="https://wa.me/32497642611?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20vos%20chiots" class="whatsapp" target="_blank">
+<i class="fab fa-whatsapp"></i>
 </a>
 
-<a href="https://www.facebook.com/profile.php?id=61555150700118"
-   class="facebook"
-   target="_blank">
-  <i class="fab fa-facebook-f"></i>
+<a href="https://www.facebook.com/profile.php?id=61555150700118" class="facebook" target="_blank">
+<i class="fab fa-facebook-f"></i>
 </a>
 
 </div>
