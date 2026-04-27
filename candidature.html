@@ -7,61 +7,90 @@
 
 <style>
 body {
-font-family: 'Georgia', serif;
-background: #faf7f2;
-margin: 0;
-color: #3e2f1c;
+  font-family: 'Georgia', serif;
+  background: #faf7f2;
+  margin: 0;
+  color: #3e2f1c;
 }
 
 .container {
-max-width: 800px;
-margin: 40px auto;
-padding: 30px;
-background: white;
-border-radius: 20px;
-box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  max-width: 1100px;
+  margin: 40px auto;
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+}
+
+/* COLONNE GAUCHE */
+.form-box {
+  flex: 2;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* COLONNE DROITE */
+.info-box {
+  flex: 1;
+  background: #fffaf0;
+  padding: 25px;
+  border-radius: 20px;
+  border: 2px solid #e5d3b3;
+  height: fit-content;
 }
 
 h1 {
-color: #b88a44;
-text-align: center;
-border-bottom: 2px solid #e5d3b3;
-padding-bottom: 10px;
+  color: #b88a44;
+  border-bottom: 2px solid #e5d3b3;
+  padding-bottom: 10px;
 }
 
-.intro {
-text-align: center;
-margin-bottom: 30px;
+.info-box h2 {
+  color: #b88a44;
 }
 
+/* FORM */
 label {
-display: block;
-margin-top: 15px;
-font-weight: bold;
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
 }
 
 input, select, textarea {
-width: 100%;
-padding: 10px;
-margin-top: 5px;
-border-radius: 10px;
-border: 1px solid #ccc;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
 }
 
 textarea {
-height: 120px;
+  height: 120px;
 }
 
 button {
-margin-top: 25px;
-width: 100%;
-padding: 15px;
-background: #b88a44;
-color: white;
-border: none;
-border-radius: 25px;
-font-size: 16px;
-cursor: pointer;
+  margin-top: 25px;
+  width: 100%;
+  padding: 15px;
+  background: #b88a44;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #9c7437;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
 }
 </style>
 
@@ -71,16 +100,12 @@ cursor: pointer;
 
 <div class="container">
 
+<!-- GAUCHE : FORMULAIRE -->
+<div class="form-box">
+
 <h1>🐾 Demande de réservation</h1>
 
-<p class="intro">
-Afin d’assurer le bien-être de nos chiots, chaque demande est étudiée avec attention.<br><br>
-📌 Les demandes sont traitées par ordre d’arrivée<br>
-📌 Une réponse vous sera envoyée<br>
-📌 Réservation confirmée après acompte
-</p>
-
-<form action="https://formspree.io/f/xqewgoww" method="POST">
+<form action="https://formspree.io/f/xdayvwqn" method="POST">
 
 <label>Type d’habitation</label>
 <select name="Habitation">
@@ -143,6 +168,36 @@ Afin d’assurer le bien-être de nos chiots, chaque demande est étudiée avec 
 <button type="submit">Soumettre ma candidature</button>
 
 </form>
+
+</div>
+
+<!-- DROITE : INFOS -->
+<div class="info-box">
+
+<h2>📋 Comment ça fonctionne ?</h2>
+
+<p>
+Chaque demande est étudiée avec soin afin de garantir le bien-être de nos chiots.
+</p>
+
+<ul>
+<li>📌 Étude personnalisée de votre profil</li>
+<li>📌 Réponse rapide par email</li>
+<li>📌 Liste d’attente par ordre d’arrivée</li>
+<li>📌 Réservation confirmée après acompte</li>
+</ul>
+
+<h2>🐾 Notre engagement</h2>
+
+<p>
+Nos chiots sont élevés en famille, avec amour, socialisés et suivis par un vétérinaire.
+</p>
+
+<p>
+Nous sélectionnons chaque famille avec attention pour assurer une belle vie à nos chiots.
+</p>
+
+</div>
 
 </div>
 
