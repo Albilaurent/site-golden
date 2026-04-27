@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demande de réservation</title>
+
+<style>
+body {
+font-family: 'Georgia', serif;
+background: #faf7f2;
+margin: 0;
+color: #3e2f1c;
+}
+
+.container {
+max-width: 800px;
+margin: 40px auto;
+padding: 30px;
+background: white;
+border-radius: 20px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+h1 {
+color: #b88a44;
+text-align: center;
+border-bottom: 2px solid #e5d3b3;
+padding-bottom: 10px;
+}
+
+.intro {
+text-align: center;
+margin-bottom: 30px;
+}
+
+label {
+display: block;
+margin-top: 15px;
+font-weight: bold;
+}
+
+input, select, textarea {
+width: 100%;
+padding: 10px;
+margin-top: 5px;
+border-radius: 10px;
+border: 1px solid #ccc;
+}
+
+textarea {
+height: 120px;
+}
+
+button {
+margin-top: 25px;
+width: 100%;
+padding: 15px;
+background: #b88a44;
+color: white;
+border: none;
+border-radius: 25px;
+font-size: 16px;
+cursor: pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🐾 Demande de réservation</h1>
+
+<p class="intro">
+Afin d’assurer le bien-être de nos chiots, chaque demande est étudiée avec attention.<br><br>
+📌 Les demandes sont traitées par ordre d’arrivée<br>
+📌 Une réponse vous sera envoyée<br>
+📌 Réservation confirmée après acompte
+</p>
+
+<form action="https://formspree.io/f/xqewgoww" method="POST">
+
+<label>Type d’habitation</label>
+<select name="Habitation">
+<option>Appartement</option>
+<option>Maison sans jardin</option>
+<option>Maison avec jardin</option>
+</select>
+
+<label>Le jardin est-il clôturé ?</label>
+<select name="Jardin">
+<option>Oui</option>
+<option>Non</option>
+</select>
+
+<label>Avez-vous des animaux ?</label>
+<select name="Animaux">
+<option>Oui</option>
+<option>Non</option>
+</select>
+
+<label>Si oui, lesquels ?</label>
+<input type="text" name="Animaux détails">
+
+<label>Expérience avec les chiens</label>
+<select name="Experience">
+<option>Débutant</option>
+<option>Déjà eu un chien</option>
+<option>Actuellement un chien</option>
+</select>
+
+<label>Temps seul du chien</label>
+<select name="Temps seul">
+<option>Moins de 2h</option>
+<option>2 à 4h</option>
+<option>Plus de 4h</option>
+</select>
+
+<label>Sexe souhaité</label>
+<select name="Sexe">
+<option>Mâle</option>
+<option>Femelle</option>
+<option>Pas de préférence</option>
+</select>
+
+<label>Pourquoi souhaitez-vous adopter ?</label>
+<textarea name="Motivation"></textarea>
+
+<label>Nom / Prénom</label>
+<input type="text" name="Nom" required>
+
+<label>Email</label>
+<input type="email" name="Email" required>
+
+<label>Téléphone</label>
+<input type="tel" name="Téléphone">
+
+<input type="hidden" name="_subject" value="Nouvelle candidature site web">
+<input type="hidden" name="_captcha" value="false">
+
+<button type="submit">Soumettre ma candidature</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
