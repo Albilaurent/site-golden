@@ -159,6 +159,23 @@ h2 {
 }
 
 /* BOUTONS */
+  .btn-reserver {
+display: inline-block;
+padding: 15px 25px;
+background: #b88a44;
+color: white;
+border-radius: 25px;
+text-decoration: none;
+font-weight: bold;
+font-size: 16px;
+transition: 0.3s;
+}
+cursor: pointer;
+
+.btn-reserver:hover {
+background: #9c7437;
+transform: scale(1.05);
+}
 .floating-buttons {
   position: fixed;
   bottom: 20px;
@@ -220,6 +237,7 @@ footer {
 <a href="#histoire">Histoire de la race</a>
 <a href="#chiens">Nos chiens</a>
 <a href="#contact">Contact</a>
+<a href="candidature.html">Réserver un chiot</a>
 </div>
 
 <header style="position:relative;height:300px;">
@@ -235,6 +253,13 @@ footer {
 <p>Bienvenue dans notre élevage familial passionné de Golden Retriever.</p>
 <p>Nos chiots sont élevés avec amour, pucés, vaccinés et suivis par notre vétérinaire.</p>
 <p>Une liste de réservation est ouverte dès la naissance.</p>
+
+<div style="text-align:center; margin-top:25px;">
+<a href="candidature.html" class="btn-reserver">
+🐾 Demande de réservation d’un chiot
+</a>
+</div>
+
 </section>
 
 <section id="golden" class="golden-section">
@@ -280,6 +305,7 @@ footer {
 <input type="email" name="email" placeholder="Email" required>
 <textarea name="message" placeholder="Votre message" required></textarea>
 <input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_replyto" value="email">
 
 <button type="submit">Envoyer</button>
 
