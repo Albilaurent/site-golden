@@ -1,326 +1,147 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Demande de réservation</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+
 body {
-  font-family: 'Georgia', serif;
-  background: #f8f5f0;
+  font-family: Georgia, serif;
+  background: #faf7f2;
   margin: 0;
-  color: #3e2f1c;
 }
 
-/* GLOBAL */
 .container {
+  display: flex;
   max-width: 1200px;
   margin: 40px auto;
-  display: flex;
   gap: 30px;
   padding: 20px;
 }
 
-.left { flex: 2; }
-.right { flex: 1; }
-
-/* TITLE */
-h1 {
-  text-align: center;
-  color: #6b3e1d;
-  margin-bottom: 30px;
+.left {
+  flex: 2;
 }
 
-/* CARD */
-.card {
-  background: #fff;
-  border-radius: 15px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-}
-
-/* HEADER CARD */
-.card-header {
+.right {
+  flex: 1;
   display: flex;
-  align-items: center;
-  margin-bottom: 15px;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.icon {
-  width: 40px;
-  height: 40px;
-  background: #8b5a2b;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px;
-}
-
-.card-header h2 {
-  margin: 0;
-  font-size: 18px;
-  color: #6b3e1d;
-}
-
-/* GRID 2 COL */
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-}
-
-/* INPUTS */
-label {
-  font-weight: bold;
-  font-size: 14px;
-}
-
-input, select, textarea {
-  width: 100%;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  margin-top: 5px;
-}
-
-textarea {
-  height: 120px;
-}
-
-/* BUTTON */
-button {
-  width: 100%;
-  padding: 15px;
-  background: #8b5a2b;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  font-size: 16px;
-  margin-top: 20px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #6b3e1d;
-}
-
-/* RIGHT SIDE */
 .info-box {
   background: #fffaf0;
+  border: 2px solid #e5d3b3;
   border-radius: 15px;
   padding: 20px;
-  border: 2px solid #e5d3b3;
-  margin-bottom: 20px;
 }
 
 .info-box h3 {
   margin-top: 0;
-  color: #6b3e1d;
 }
 
-/* MOBILE */
-@media (max-width: 900px) {
-  .container {
-    flex-direction: column;
-  }
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
+.info-line {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
 }
+
+.highlight {
+  background: #f3e4d0;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.step {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.step span {
+  background: #8b5a2b;
+  color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-form {
+  margin-top: 40px;
+  background: #f3e4d0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 15px;
+}
+
 </style>
 
 </head>
 
 <body>
 
-<h1>🐾 Demande de réservation d’un chiot</h1>
-
 <div class="container">
 
-<!-- LEFT -->
+<!-- GAUCHE -->
 <div class="left">
+
+<h1>🐾 Demande de réservation</h1>
 
 <form action="https://formspree.io/f/xdayvwqn" method="POST">
 
-<!-- 1 -->
-<div class="card">
-<div class="card-header">
-<div class="icon"><i class="fa fa-home"></i></div>
-<h2>1. Votre environnement</h2>
-</div>
+<input type="text" placeholder="Nom" required>
+<input type="email" placeholder="Email" required>
 
-<div class="grid-2">
-<div>
-<label>Type d’habitation</label>
-<select name="habitation">
-<option>Maison avec jardin</option>
-<option>Maison sans jardin</option>
-<option>Appartement</option>
-</select>
-</div>
-
-<div>
-<label>Jardin clôturé ?</label>
-<select name="jardin">
-<option>Oui</option>
-<option>Non</option>
-</select>
-</div>
-</div>
-</div>
-
-<!-- 2 -->
-<div class="card">
-<div class="card-header">
-<div class="icon"><i class="fa fa-paw"></i></div>
-<h2>2. Vos animaux</h2>
-</div>
-
-<div class="grid-2">
-<div>
-<label>Avez-vous des animaux ?</label>
-<select name="animaux">
-<option>Oui</option>
-<option>Non</option>
-</select>
-</div>
-
-<div>
-<label>Si oui, lesquels ?</label>
-<input type="text" name="details_animaux">
-</div>
-</div>
-</div>
-
-<!-- 3 -->
-<div class="card">
-<div class="card-header">
-<div class="icon"><i class="fa fa-users"></i></div>
-<h2>3. Votre foyer</h2>
-</div>
-
-<div class="grid-2">
-<div>
-<label>Composition</label>
-<select name="foyer">
-<option>Seul</option>
-<option>Couple</option>
-<option>Famille</option>
-</select>
-</div>
-
-<div>
-<label>Enfants ?</label>
-<select name="enfants">
-<option>Oui</option>
-<option>Non</option>
-</select>
-</div>
-</div>
-</div>
-
-<!-- 4 -->
-<div class="card">
-<div class="card-header">
-<div class="icon"><i class="fa fa-star"></i></div>
-<h2>4. Expérience</h2>
-</div>
-
-<select name="experience">
-<option>Débutant</option>
-<option>Déjà eu un chien</option>
-<option>Expérimenté</option>
-</select>
-</div>
-
-<!-- 5 -->
-<div class="card">
-<div class="card-header">
-<div class="icon"><i class="fa fa-clock"></i></div>
-<h2>5. Disponibilité</h2>
-</div>
-
-<select name="temps_seul">
-<option>Moins de 2h</option>
-<option>2 à 4h</option>
-<option>Plus de 4h</option>
-</select>
-</div>
-
-<!-- 6 -->
-<div class="card">
-<div class="card-header">
-<div class="icon"><i class="fa fa-heart"></i></div>
-<h2>6. Votre projet</h2>
-</div>
-
-<select name="sexe">
-<option>Mâle</option>
-<option>Femelle</option>
-<option>Pas de préférence</option>
-</select>
-</div>
-
-<!-- 7 -->
-<div class="card">
-<div class="card-header">
-<div class="icon"><i class="fa fa-comment"></i></div>
-<h2>7. Motivation</h2>
-</div>
-
-<textarea name="motivation"></textarea>
-</div>
-
-<!-- 8 -->
-<div class="card">
-<div class="card-header">
-<div class="icon"><i class="fa fa-user"></i></div>
-<h2>8. Vos coordonnées</h2>
-</div>
-
-<div class="grid-2">
-<input type="text" name="nom" placeholder="Nom / Prénom" required>
-<input type="email" name="email" placeholder="Email" required>
-</div>
-
-<input type="tel" name="telephone" placeholder="Téléphone">
-</div>
-
-<input type="hidden" name="_subject" value="Nouvelle candidature site web">
-<input type="hidden" name="_captcha" value="false">
-
-<button type="submit">🐾 Soumettre ma candidature</button>
+<button type="submit">Envoyer</button>
 
 </form>
 
 </div>
 
-<!-- RIGHT -->
+<!-- DROITE -->
 <div class="right">
 
 <div class="info-box">
-<h3>Pourquoi ce formulaire ?</h3>
-<p>Nous analysons chaque demande pour garantir le bien-être des chiots.</p>
+<h3><i class="fa fa-heart"></i> Pourquoi ce formulaire ?</h3>
+<p>Chaque demande est étudiée avec attention.</p>
 </div>
 
 <div class="info-box">
-<p>📌 Liste d’attente par ordre d’arrivée</p>
-<p>📌 Réponse rapide</p>
-<p>📌 Réservation après acompte</p>
+
+<div class="info-line">
+<i class="fa fa-calendar"></i>
+<div>Liste d’attente</div>
+</div>
+
+<div class="info-line">
+<i class="fa fa-envelope"></i>
+<div>Réponse par email</div>
+</div>
+
+<div class="highlight">
+Nombre de chiots limité
+</div>
+
 </div>
 
 <div class="info-box">
 <h3>Notre processus</h3>
-<p>1. Formulaire</p>
-<p>2. Analyse</p>
-<p>3. Contact</p>
-<p>4. Validation</p>
+
+<div class="step"><span>1</span> Formulaire</div>
+<div class="step"><span>2</span> Analyse</div>
+
 </div>
 
 </div>
