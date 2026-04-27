@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Merci pour votre demande</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+body {
+  font-family: Georgia, serif;
+  background: #f5f0e8;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border: 2px solid #e5d3b3;
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* ICON */
+.icon {
+  font-size: 50px;
+  color: #8b5a2b;
+  margin-bottom: 15px;
+}
+
+/* TITRE */
+h1 {
+  color: #6b3e1d;
+}
+
+/* TEXTE */
+p {
+  color: #3e2f1c;
+  margin: 15px 0;
+}
+
+/* BOUTON */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #8b5a2b, #6b3e1d);
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="icon">🐾</div>
+
+<h1>Merci pour votre demande</h1>
+
+<p>
+Votre candidature a bien été envoyée.<br><br>
+Nous allons l’étudier avec attention afin de garantir le bien-être de nos chiots.
+</p>
+
+<p>
+📩 Une réponse vous sera envoyée par email dans les plus brefs délais.
+</p>
+
+<a href="index.html" class="btn">Retour à l’accueil</a>
+
+</div>
+
+</body>
+</html>
