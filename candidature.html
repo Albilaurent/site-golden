@@ -14,46 +14,47 @@ body {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 40px auto;
   display: flex;
-  gap: 40px;
+  gap: 30px;
   padding: 20px;
 }
 
-/* COLONNE GAUCHE */
-.form-box {
+/* COLONNES */
+.left {
   flex: 2;
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
-
-/* COLONNE DROITE */
-.info-box {
+.right {
   flex: 1;
-  background: #fffaf0;
-  padding: 25px;
-  border-radius: 20px;
-  border: 2px solid #e5d3b3;
-  height: fit-content;
 }
 
+/* BLOCS */
+.block {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* TITRE */
 h1 {
+  text-align: center;
   color: #b88a44;
-  border-bottom: 2px solid #e5d3b3;
-  padding-bottom: 10px;
+  margin-bottom: 30px;
 }
 
-.info-box h2 {
+/* TITRES BLOCS */
+.block h2 {
   color: #b88a44;
+  margin-bottom: 10px;
 }
 
 /* FORM */
 label {
   display: block;
-  margin-top: 15px;
+  margin-top: 10px;
   font-weight: bold;
 }
 
@@ -66,11 +67,11 @@ input, select, textarea {
 }
 
 textarea {
-  height: 120px;
+  height: 100px;
 }
 
 button {
-  margin-top: 25px;
+  margin-top: 20px;
   width: 100%;
   padding: 15px;
   background: #b88a44;
@@ -79,15 +80,23 @@ button {
   border-radius: 25px;
   font-size: 16px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 button:hover {
   background: #9c7437;
 }
 
+/* DROITE */
+.info-box {
+  background: #fffaf0;
+  padding: 20px;
+  border-radius: 15px;
+  border: 2px solid #e5d3b3;
+  margin-bottom: 20px;
+}
+
 /* MOBILE */
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .container {
     flex-direction: column;
   }
@@ -98,14 +107,16 @@ button:hover {
 
 <body>
 
+<h1>🐾 Demande de réservation d’un chiot</h1>
+
 <div class="container">
 
-<!-- GAUCHE : FORMULAIRE -->
-<div class="form-box">
-
-<h1>🐾 Demande de réservation</h1>
+<div class="left">
 
 <form action="https://formspree.io/f/xdayvwqn" method="POST">
+
+<div class="block">
+<h2>1. Votre environnement</h2>
 
 <label>Type d’habitation</label>
 <select name="Habitation">
@@ -114,11 +125,15 @@ button:hover {
 <option>Maison avec jardin</option>
 </select>
 
-<label>Le jardin est-il clôturé ?</label>
+<label>Jardin clôturé ?</label>
 <select name="Jardin">
 <option>Oui</option>
 <option>Non</option>
 </select>
+</div>
+
+<div class="block">
+<h2>2. Vos animaux</h2>
 
 <label>Avez-vous des animaux ?</label>
 <select name="Animaux">
@@ -126,76 +141,97 @@ button:hover {
 <option>Non</option>
 </select>
 
-<label>Si oui, lesquels ?</label>
+<label>Si oui</label>
 <input type="text" name="Animaux détails">
+</div>
 
-<label>Expérience avec les chiens</label>
+<div class="block">
+<h2>3. Votre foyer</h2>
+
+<label>Composition du foyer</label>
+<input type="text" name="Foyer">
+
+<label>Enfants ?</label>
+<select name="Enfants">
+<option>Oui</option>
+<option>Non</option>
+</select>
+</div>
+
+<div class="block">
+<h2>4. Expérience</h2>
+
 <select name="Experience">
 <option>Débutant</option>
 <option>Déjà eu un chien</option>
 <option>Actuellement un chien</option>
 </select>
+</div>
 
-<label>Temps seul du chien</label>
+<div class="block">
+<h2>5. Disponibilité</h2>
+
 <select name="Temps seul">
 <option>Moins de 2h</option>
 <option>2 à 4h</option>
 <option>Plus de 4h</option>
 </select>
+</div>
 
-<label>Sexe souhaité</label>
+<div class="block">
+<h2>6. Votre projet</h2>
+
 <select name="Sexe">
 <option>Mâle</option>
 <option>Femelle</option>
 <option>Pas de préférence</option>
 </select>
+</div>
 
-<label>Pourquoi souhaitez-vous adopter ?</label>
+<div class="block">
+<h2>7. Motivation</h2>
+
 <textarea name="Motivation"></textarea>
+</div>
 
-<label>Nom / Prénom</label>
-<input type="text" name="Nom" required>
+<div class="block">
+<h2>8. Vos coordonnées</h2>
 
-<label>Email</label>
-<input type="email" name="Email" required>
-
-<label>Téléphone</label>
-<input type="tel" name="Téléphone">
+<input type="text" name="Nom" placeholder="Nom / Prénom" required>
+<input type="email" name="Email" placeholder="Email" required>
+<input type="tel" name="Téléphone" placeholder="Téléphone">
+</div>
 
 <input type="hidden" name="_subject" value="Nouvelle candidature site web">
 <input type="hidden" name="_captcha" value="false">
 
-<button type="submit">Soumettre ma candidature</button>
+<button type="submit">🐾 Soumettre ma candidature</button>
 
 </form>
 
 </div>
 
-<!-- DROITE : INFOS -->
+<!-- DROITE -->
+<div class="right">
+
 <div class="info-box">
+<h3>Pourquoi ce formulaire ?</h3>
+<p>Chaque demande est étudiée avec attention afin de garantir le bien-être de nos chiots.</p>
+</div>
 
-<h2>📋 Comment ça fonctionne ?</h2>
+<div class="info-box">
+<p>📌 Liste d’attente par ordre d’arrivée</p>
+<p>📌 Réponse par email</p>
+<p>📌 Réservation après acompte</p>
+</div>
 
-<p>
-Chaque demande est étudiée avec soin afin de garantir le bien-être de nos chiots.
-</p>
-
-<ul>
-<li>📌 Étude personnalisée de votre profil</li>
-<li>📌 Réponse rapide par email</li>
-<li>📌 Liste d’attente par ordre d’arrivée</li>
-<li>📌 Réservation confirmée après acompte</li>
-</ul>
-
-<h2>🐾 Notre engagement</h2>
-
-<p>
-Nos chiots sont élevés en famille, avec amour, socialisés et suivis par un vétérinaire.
-</p>
-
-<p>
-Nous sélectionnons chaque famille avec attention pour assurer une belle vie à nos chiots.
-</p>
+<div class="info-box">
+<h3>Notre processus</h3>
+<p>1. Vous remplissez le formulaire</p>
+<p>2. Nous analysons votre demande</p>
+<p>3. Nous vous contactons</p>
+<p>4. Validation après acompte</p>
+</div>
 
 </div>
 
