@@ -17,41 +17,34 @@ body {
   max-width: 1200px;
   margin: 40px auto;
   display: flex;
-  gap: 30px;
+  gap: 25px;
   padding: 20px;
 }
 
-/* COLONNES */
-.left {
-  flex: 2;
-}
-.right {
-  flex: 1;
+.left { flex: 2; }
+.right { flex: 1; }
+
+h1 {
+  text-align: center;
+  color: #6b3e1d;
+  margin-bottom: 25px;
 }
 
 /* BLOCS */
 .block {
-  background: white;
-  padding: 20px;
-  margin-bottom: 20px;
+  background: #fff;
+  padding: 18px;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-bottom: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* TITRE */
-h1 {
-  text-align: center;
-  color: #b88a44;
-  margin-bottom: 30px;
-}
-
-/* TITRES BLOCS */
 .block h2 {
-  color: #b88a44;
+  color: #6b3e1d;
   margin-bottom: 10px;
 }
 
-/* FORM */
+/* INPUTS */
 label {
   display: block;
   margin-top: 10px;
@@ -66,15 +59,14 @@ input, select, textarea {
   border: 1px solid #ccc;
 }
 
-textarea {
-  height: 100px;
-}
+textarea { height: 100px; }
 
+/* BOUTON */
 button {
-  margin-top: 20px;
   width: 100%;
   padding: 15px;
-  background: #b88a44;
+  margin-top: 15px;
+  background: #8b5a2b;
   color: white;
   border: none;
   border-radius: 25px;
@@ -83,16 +75,20 @@ button {
 }
 
 button:hover {
-  background: #9c7437;
+  background: #6b3e1d;
 }
 
-/* DROITE */
+/* COLONNE DROITE */
 .info-box {
   background: #fffaf0;
   padding: 20px;
   border-radius: 15px;
   border: 2px solid #e5d3b3;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+.info-box h3 {
+  color: #6b3e1d;
 }
 
 /* MOBILE */
@@ -102,7 +98,6 @@ button:hover {
   }
 }
 </style>
-
 </head>
 
 <body>
@@ -119,14 +114,14 @@ button:hover {
 <h2>1. Votre environnement</h2>
 
 <label>Type d’habitation</label>
-<select name="Habitation">
-<option>Appartement</option>
-<option>Maison sans jardin</option>
+<select name="habitation">
 <option>Maison avec jardin</option>
+<option>Maison sans jardin</option>
+<option>Appartement</option>
 </select>
 
 <label>Jardin clôturé ?</label>
-<select name="Jardin">
+<select name="jardin">
 <option>Oui</option>
 <option>Non</option>
 </select>
@@ -136,23 +131,27 @@ button:hover {
 <h2>2. Vos animaux</h2>
 
 <label>Avez-vous des animaux ?</label>
-<select name="Animaux">
+<select name="animaux">
 <option>Oui</option>
 <option>Non</option>
 </select>
 
-<label>Si oui</label>
-<input type="text" name="Animaux détails">
+<label>Si oui, lesquels ?</label>
+<input type="text" name="details_animaux">
 </div>
 
 <div class="block">
 <h2>3. Votre foyer</h2>
 
-<label>Composition du foyer</label>
-<input type="text" name="Foyer">
+<label>Composition</label>
+<select name="foyer">
+<option>Seul</option>
+<option>Couple</option>
+<option>Famille avec enfants</option>
+</select>
 
 <label>Enfants ?</label>
-<select name="Enfants">
+<select name="enfants">
 <option>Oui</option>
 <option>Non</option>
 </select>
@@ -160,18 +159,16 @@ button:hover {
 
 <div class="block">
 <h2>4. Expérience</h2>
-
-<select name="Experience">
+<select name="experience">
 <option>Débutant</option>
 <option>Déjà eu un chien</option>
-<option>Actuellement un chien</option>
+<option>Expérimenté</option>
 </select>
 </div>
 
 <div class="block">
 <h2>5. Disponibilité</h2>
-
-<select name="Temps seul">
+<select name="temps_seul">
 <option>Moins de 2h</option>
 <option>2 à 4h</option>
 <option>Plus de 4h</option>
@@ -180,8 +177,7 @@ button:hover {
 
 <div class="block">
 <h2>6. Votre projet</h2>
-
-<select name="Sexe">
+<select name="sexe">
 <option>Mâle</option>
 <option>Femelle</option>
 <option>Pas de préférence</option>
@@ -190,16 +186,15 @@ button:hover {
 
 <div class="block">
 <h2>7. Motivation</h2>
-
-<textarea name="Motivation"></textarea>
+<textarea name="motivation"></textarea>
 </div>
 
 <div class="block">
 <h2>8. Vos coordonnées</h2>
 
-<input type="text" name="Nom" placeholder="Nom / Prénom" required>
-<input type="email" name="Email" placeholder="Email" required>
-<input type="tel" name="Téléphone" placeholder="Téléphone">
+<input type="text" name="nom" placeholder="Nom / Prénom" required>
+<input type="email" name="email" placeholder="Email" required>
+<input type="tel" name="telephone" placeholder="Téléphone">
 </div>
 
 <input type="hidden" name="_subject" value="Nouvelle candidature site web">
@@ -216,21 +211,27 @@ button:hover {
 
 <div class="info-box">
 <h3>Pourquoi ce formulaire ?</h3>
-<p>Chaque demande est étudiée avec attention afin de garantir le bien-être de nos chiots.</p>
+<p>Nous analysons chaque demande pour garantir le bien-être de nos chiots.</p>
 </div>
 
 <div class="info-box">
 <p>📌 Liste d’attente par ordre d’arrivée</p>
-<p>📌 Réponse par email</p>
+<p>📌 Réponse rapide</p>
 <p>📌 Réservation après acompte</p>
 </div>
 
 <div class="info-box">
 <h3>Notre processus</h3>
-<p>1. Vous remplissez le formulaire</p>
-<p>2. Nous analysons votre demande</p>
-<p>3. Nous vous contactons</p>
+<p>1. Remplissage du formulaire</p>
+<p>2. Étude de votre profil</p>
+<p>3. Réponse par email</p>
 <p>4. Validation après acompte</p>
+</div>
+
+<div class="info-box">
+<h3>Paiement</h3>
+<p>💳 Virement bancaire</p>
+<p>📱 QR Code</p>
 </div>
 
 </div>
