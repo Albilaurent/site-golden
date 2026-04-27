@@ -5,72 +5,104 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Demande de réservation</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 body {
   font-family: 'Georgia', serif;
-  background: #faf7f2;
+  background: #f8f5f0;
   margin: 0;
   color: #3e2f1c;
 }
 
+/* GLOBAL */
 .container {
   max-width: 1200px;
   margin: 40px auto;
   display: flex;
-  gap: 25px;
+  gap: 30px;
   padding: 20px;
 }
 
 .left { flex: 2; }
 .right { flex: 1; }
 
+/* TITLE */
 h1 {
   text-align: center;
   color: #6b3e1d;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
-/* BLOCS */
-.block {
+/* CARD */
+.card {
   background: #fff;
-  padding: 18px;
   border-radius: 15px;
-  margin-bottom: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
-.block h2 {
+/* HEADER CARD */
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  background: #8b5a2b;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 18px;
   color: #6b3e1d;
-  margin-bottom: 10px;
+}
+
+/* GRID 2 COL */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
 }
 
 /* INPUTS */
 label {
-  display: block;
-  margin-top: 10px;
   font-weight: bold;
+  font-size: 14px;
 }
 
 input, select, textarea {
   width: 100%;
   padding: 10px;
-  margin-top: 5px;
   border-radius: 10px;
   border: 1px solid #ccc;
+  margin-top: 5px;
 }
 
-textarea { height: 100px; }
+textarea {
+  height: 120px;
+}
 
-/* BOUTON */
+/* BUTTON */
 button {
   width: 100%;
   padding: 15px;
-  margin-top: 15px;
   background: #8b5a2b;
   color: white;
   border: none;
   border-radius: 25px;
   font-size: 16px;
+  margin-top: 20px;
   cursor: pointer;
 }
 
@@ -78,16 +110,17 @@ button:hover {
   background: #6b3e1d;
 }
 
-/* COLONNE DROITE */
+/* RIGHT SIDE */
 .info-box {
   background: #fffaf0;
-  padding: 20px;
   border-radius: 15px;
+  padding: 20px;
   border: 2px solid #e5d3b3;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .info-box h3 {
+  margin-top: 0;
   color: #6b3e1d;
 }
 
@@ -96,8 +129,12 @@ button:hover {
   .container {
     flex-direction: column;
   }
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
+
 </head>
 
 <body>
@@ -106,59 +143,95 @@ button:hover {
 
 <div class="container">
 
+<!-- LEFT -->
 <div class="left">
 
 <form action="https://formspree.io/f/xdayvwqn" method="POST">
 
-<div class="block">
+<!-- 1 -->
+<div class="card">
+<div class="card-header">
+<div class="icon"><i class="fa fa-home"></i></div>
 <h2>1. Votre environnement</h2>
+</div>
 
+<div class="grid-2">
+<div>
 <label>Type d’habitation</label>
 <select name="habitation">
 <option>Maison avec jardin</option>
 <option>Maison sans jardin</option>
 <option>Appartement</option>
 </select>
+</div>
 
+<div>
 <label>Jardin clôturé ?</label>
 <select name="jardin">
 <option>Oui</option>
 <option>Non</option>
 </select>
 </div>
+</div>
+</div>
 
-<div class="block">
+<!-- 2 -->
+<div class="card">
+<div class="card-header">
+<div class="icon"><i class="fa fa-paw"></i></div>
 <h2>2. Vos animaux</h2>
+</div>
 
+<div class="grid-2">
+<div>
 <label>Avez-vous des animaux ?</label>
 <select name="animaux">
 <option>Oui</option>
 <option>Non</option>
 </select>
+</div>
 
+<div>
 <label>Si oui, lesquels ?</label>
 <input type="text" name="details_animaux">
 </div>
+</div>
+</div>
 
-<div class="block">
+<!-- 3 -->
+<div class="card">
+<div class="card-header">
+<div class="icon"><i class="fa fa-users"></i></div>
 <h2>3. Votre foyer</h2>
+</div>
 
+<div class="grid-2">
+<div>
 <label>Composition</label>
 <select name="foyer">
 <option>Seul</option>
 <option>Couple</option>
-<option>Famille avec enfants</option>
+<option>Famille</option>
 </select>
+</div>
 
+<div>
 <label>Enfants ?</label>
 <select name="enfants">
 <option>Oui</option>
 <option>Non</option>
 </select>
 </div>
+</div>
+</div>
 
-<div class="block">
+<!-- 4 -->
+<div class="card">
+<div class="card-header">
+<div class="icon"><i class="fa fa-star"></i></div>
 <h2>4. Expérience</h2>
+</div>
+
 <select name="experience">
 <option>Débutant</option>
 <option>Déjà eu un chien</option>
@@ -166,8 +239,13 @@ button:hover {
 </select>
 </div>
 
-<div class="block">
+<!-- 5 -->
+<div class="card">
+<div class="card-header">
+<div class="icon"><i class="fa fa-clock"></i></div>
 <h2>5. Disponibilité</h2>
+</div>
+
 <select name="temps_seul">
 <option>Moins de 2h</option>
 <option>2 à 4h</option>
@@ -175,8 +253,13 @@ button:hover {
 </select>
 </div>
 
-<div class="block">
+<!-- 6 -->
+<div class="card">
+<div class="card-header">
+<div class="icon"><i class="fa fa-heart"></i></div>
 <h2>6. Votre projet</h2>
+</div>
+
 <select name="sexe">
 <option>Mâle</option>
 <option>Femelle</option>
@@ -184,16 +267,28 @@ button:hover {
 </select>
 </div>
 
-<div class="block">
+<!-- 7 -->
+<div class="card">
+<div class="card-header">
+<div class="icon"><i class="fa fa-comment"></i></div>
 <h2>7. Motivation</h2>
+</div>
+
 <textarea name="motivation"></textarea>
 </div>
 
-<div class="block">
+<!-- 8 -->
+<div class="card">
+<div class="card-header">
+<div class="icon"><i class="fa fa-user"></i></div>
 <h2>8. Vos coordonnées</h2>
+</div>
 
+<div class="grid-2">
 <input type="text" name="nom" placeholder="Nom / Prénom" required>
 <input type="email" name="email" placeholder="Email" required>
+</div>
+
 <input type="tel" name="telephone" placeholder="Téléphone">
 </div>
 
@@ -206,12 +301,12 @@ button:hover {
 
 </div>
 
-<!-- DROITE -->
+<!-- RIGHT -->
 <div class="right">
 
 <div class="info-box">
 <h3>Pourquoi ce formulaire ?</h3>
-<p>Nous analysons chaque demande pour garantir le bien-être de nos chiots.</p>
+<p>Nous analysons chaque demande pour garantir le bien-être des chiots.</p>
 </div>
 
 <div class="info-box">
@@ -222,16 +317,10 @@ button:hover {
 
 <div class="info-box">
 <h3>Notre processus</h3>
-<p>1. Remplissage du formulaire</p>
-<p>2. Étude de votre profil</p>
-<p>3. Réponse par email</p>
-<p>4. Validation après acompte</p>
-</div>
-
-<div class="info-box">
-<h3>Paiement</h3>
-<p>💳 Virement bancaire</p>
-<p>📱 QR Code</p>
+<p>1. Formulaire</p>
+<p>2. Analyse</p>
+<p>3. Contact</p>
+<p>4. Validation</p>
 </div>
 
 </div>
