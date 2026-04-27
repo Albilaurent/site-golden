@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Demande de réservation</title>
+<title>Réservation chiot - Amours de Goldinous</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -13,20 +13,42 @@
 
 body {
   font-family: Georgia, serif;
-  background: #faf7f2;
+  background: #f5f0e8;
   margin: 0;
 }
 
+/* TITRE */
+h1 {
+  text-align: center;
+  color: #6b3e1d;
+  margin-top: 30px;
+}
+
+/* BADGE */
+.badge {
+  text-align: center;
+  background: #8b5a2b;
+  color: white;
+  padding: 10px;
+  margin: 15px auto;
+  width: fit-content;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* CONTAINER */
 .container {
   display: flex;
   max-width: 1200px;
-  margin: 40px auto;
+  margin: 20px auto;
   gap: 30px;
   padding: 20px;
 }
 
+/* LEFT */
 .left { flex: 2; }
 
+/* RIGHT */
 .right {
   flex: 1;
   display: flex;
@@ -34,66 +56,56 @@ body {
   gap: 20px;
 }
 
-.info-box {
-  background: #fffaf0;
+/* CARD */
+.section-card {
+  background: white;
   border: 2px solid #e5d3b3;
-  border-radius: 15px;
+  border-radius: 20px;
   padding: 20px;
+  margin-bottom: 20px;
+  transition: 0.3s;
 }
 
-.info-line {
+.section-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.section-title {
   display: flex;
+  align-items: center;
   gap: 10px;
-  margin-bottom: 10px;
+  font-weight: bold;
+  color: #6b3e1d;
+  margin-bottom: 15px;
 }
 
-.highlight {
-  background: #f3e4d0;
-  padding: 10px;
-  border-radius: 10px;
-  margin-top: 10px;
-}
-
-.step {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.step span {
+.icon-circle {
   background: #8b5a2b;
   color: white;
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* FORMULAIRE */
-
-.form-box {
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+/* FORM */
+.form-row {
+  display: flex;
+  gap: 20px;
 }
 
-.form-box h3 {
-  margin-top: 25px;
-  color: #6b3e1d;
-}
+.form-group { flex: 1; }
 
-.form-box label {
+label {
   display: block;
-  margin-top: 15px;
+  margin-top: 10px;
   font-weight: bold;
 }
 
-.form-box input,
-.form-box select,
-.form-box textarea {
+input, select, textarea {
   width: 100%;
   padding: 12px;
   border-radius: 10px;
@@ -101,144 +113,171 @@ body {
   margin-top: 5px;
 }
 
-.form-box textarea {
-  height: 100px;
-}
-
-.form-box button {
-  width: 100%;
-  margin-top: 20px;
-  padding: 15px;
-  background: #8b5a2b;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.form-box button:hover {
-  background: #6b3e1d;
-}
+textarea { height: 100px; }
 
 .radio-group {
   display: flex;
   gap: 20px;
-  margin-top: 10px;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  background: linear-gradient(135deg, #8b5a2b, #6b3e1d);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+/* RIGHT */
+.info-box {
+  background: #fffaf0;
+  border: 2px solid #e5d3b3;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 40px;
+  background: #f3e4d0;
+  padding: 25px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer img { height: 70px; }
+
+/* MOBILE */
+@media (max-width: 900px) {
+
+.container {
+  flex-direction: column;
+}
+
+.form-row {
+  flex-direction: column;
+}
+
+.footer-content {
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
 
+<h1>🐾 Réservation d’un chiot 🐾</h1>
+
+<div class="badge">⚠️ Plus que 3 chiots disponibles</div>
+
 <div class="container">
 
-<!-- GAUCHE -->
+<!-- LEFT -->
 <div class="left">
-
-<h1>🐾 Demande de réservation</h1>
 
 <form action="https://formspree.io/f/xdayvwqn" method="POST">
 
-<div class="form-box">
+<div class="section-card">
+<div class="section-title">
+<div class="icon-circle"><i class="fa fa-home"></i></div>
+Votre environnement
+</div>
 
-<h3>1. Votre environnement</h3>
-<label>Type d’habitation</label>
+<div class="form-row">
+<div class="form-group">
+<label>Habitation</label>
 <select name="habitation">
 <option>Maison avec jardin</option>
-<option>Maison sans jardin</option>
 <option>Appartement</option>
 </select>
-
-<label>Jardin clôturé ?</label>
-<div class="radio-group">
-<label><input type="radio" name="jardin" value="oui"> Oui</label>
-<label><input type="radio" name="jardin" value="non"> Non</label>
 </div>
 
-<h3>2. Vos animaux</h3>
-<label>Avez-vous des animaux ?</label>
+<div class="form-group">
+<label>Jardin clôturé</label>
 <div class="radio-group">
-<label><input type="radio" name="animaux" value="oui"> Oui</label>
-<label><input type="radio" name="animaux" value="non"> Non</label>
+<label><input type="radio" name="jardin"> Oui</label>
+<label><input type="radio" name="jardin"> Non</label>
+</div>
+</div>
+</div>
 </div>
 
-<label>Si oui, lesquels ?</label>
-<input type="text" name="animaux_details">
+<div class="section-card">
+<div class="section-title">
+<div class="icon-circle"><i class="fa fa-user"></i></div>
+Vos coordonnées
+</div>
 
-<h3>3. Votre foyer</h3>
-<select name="foyer">
-<option>Seul</option>
-<option>Couple</option>
-<option>Famille avec enfants</option>
-</select>
-
-<h3>4. Expérience</h3>
-<select name="experience">
-<option>Débutant</option>
-<option>Déjà eu un chien</option>
-<option>Expérimenté</option>
-</select>
-
-<h3>5. Disponibilité</h3>
-<select name="temps">
-<option>Moins de 2h</option>
-<option>2 à 4h</option>
-<option>Plus de 4h</option>
-</select>
-
-<h3>6. Votre projet</h3>
-<select name="sexe">
-<option>Mâle</option>
-<option>Femelle</option>
-<option>Pas de préférence</option>
-</select>
-
-<h3>7. Motivation</h3>
-<textarea name="motivation"></textarea>
-
-<h3>8. Vos coordonnées</h3>
-<input type="text" name="nom" placeholder="Nom / Prénom" required>
+<input type="text" name="nom" placeholder="Nom" required>
 <input type="email" name="email" placeholder="Email" required>
-<input type="tel" name="telephone" placeholder="Téléphone">
-
-<button type="submit">🐾 Soumettre ma candidature</button>
 
 </div>
+
+<button type="submit">🐾 Envoyer ma demande</button>
+
+<input type="hidden" name="_next" value="merci.html">
+
 </form>
 
 </div>
 
-<!-- DROITE -->
+<!-- RIGHT -->
 <div class="right">
 
 <div class="info-box">
-<h3><i class="fa fa-heart"></i> Pourquoi ce formulaire ?</h3>
-<p>Chaque demande est étudiée avec attention.</p>
-</div>
-
-<div class="info-box">
-<div class="info-line"><i class="fa fa-calendar"></i> Liste d’attente</div>
-<div class="info-line"><i class="fa fa-envelope"></i> Réponse rapide</div>
-<div class="info-line"><i class="fa fa-check-circle"></i> Réservation après acompte</div>
-<div class="highlight">🐾 Chiots limités</div>
+<h3>Pourquoi ce formulaire ?</h3>
+<p>Chaque demande est étudiée avec soin pour garantir le bien-être des chiots.</p>
 </div>
 
 <div class="info-box">
 <h3>Processus</h3>
-<div class="step"><span>1</span> Formulaire</div>
-<div class="step"><span>2</span> Analyse</div>
-<div class="step"><span>3</span> Contact</div>
-</div>
-
-<div class="info-box">
-<h3>Contact</h3>
-<p><strong>amoursdegoldinous@gmail.com</strong></p>
+<p>1. Candidature<br>2. Analyse<br>3. Contact<br>4. Réservation</p>
 </div>
 
 </div>
 
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+<div class="footer-content">
+
+<div>
+📍 Belgique<br>
+Élevage familial
+</div>
+
+<div>
+<img src="images/logo.png">
+</div>
+
+<div>
+🌐 amoursdegoldinous.be
+</div>
+
+</div>
 </div>
 
 </body>
