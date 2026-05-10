@@ -1,14 +1,20 @@
-<!DOCTYPE html><html lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <title>Amours de Goldinous</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
-html { scroll-behavior: smooth; }
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Georgia', serif;
@@ -17,7 +23,12 @@ body {
   color: #3e2f1c;
 }
 
-header { margin: 0; padding: 0; }
+header {
+  margin: 0;
+  padding: 0;
+}
+
+/* MENU */
 
 .menu-btn {
   position: fixed;
@@ -25,7 +36,7 @@ header { margin: 0; padding: 0; }
   right: 20px;
   font-size: 28px;
   cursor: pointer;
-  color: #fff;
+  color: white;
   z-index: 2000;
 }
 
@@ -40,6 +51,7 @@ header { margin: 0; padding: 0; }
   flex-direction: column;
   padding-top: 60px;
   transition: 0.3s;
+  z-index: 1500;
 }
 
 .menu a {
@@ -49,7 +61,11 @@ header { margin: 0; padding: 0; }
   font-weight: bold;
 }
 
-.menu.active { right: 0; }
+.menu.active {
+  right: 0;
+}
+
+/* GENERAL */
 
 section {
   padding: 30px 20px;
@@ -57,8 +73,11 @@ section {
   margin: auto;
 }
 
-h2 {
+h1, h2 {
   color: #b88a44;
+}
+
+h2 {
   border-bottom: 2px solid #e5d3b3;
   display: inline-block;
 }
@@ -68,7 +87,29 @@ h2 {
   border-radius: 20px;
   padding: 25px;
   margin-top: 20px;
+  background: white;
 }
+
+/* BOUTONS */
+
+.btn-reserver {
+  display: inline-block;
+  padding: 15px 25px;
+  background: #b88a44;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.btn-reserver:hover {
+  background: #9c7437;
+  transform: scale(1.05);
+}
+
+/* CARDS */
 
 .cards {
   display: flex;
@@ -93,6 +134,8 @@ h2 {
   border-radius: 15px;
 }
 
+/* GALERIE */
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -111,6 +154,7 @@ h2 {
 }
 
 /* LIGHTBOX */
+
 #lightbox {
   display: none;
   position: fixed;
@@ -131,6 +175,7 @@ h2 {
 }
 
 /* CONTACT */
+
 .contact-form {
   background: #fff;
   padding: 25px;
@@ -141,10 +186,11 @@ h2 {
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 15px;
   border-radius: 10px;
   border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 .contact-form button {
@@ -158,24 +204,71 @@ h2 {
   width: 100%;
 }
 
-/* BOUTONS */
-  .btn-reserver {
-display: inline-block;
-padding: 15px 25px;
-background: #b88a44;
-color: white;
-border-radius: 25px;
-text-decoration: none;
-font-weight: bold;
-font-size: 16px;
-transition: 0.3s;
-}
-cursor: pointer;
+/* SECTION PORTEE */
 
-.btn-reserver:hover {
-background: #9c7437;
-transform: scale(1.05);
+.portee-section {
+  background: linear-gradient(135deg,#fffaf0,#f3e4d0);
+  border: 2px solid #e5d3b3;
+  border-radius: 25px;
+  padding: 35px;
+  margin-top: 40px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  text-align: center;
+  overflow: hidden;
 }
+
+.portee-section img {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* CARROUSEL */
+
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  margin-top: 20px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+.carousel-track img {
+  width: 300px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+.carousel-track img:hover {
+  transform: scale(1.03);
+}
+
+@keyframes scroll {
+
+0% {
+  transform: translateX(0);
+}
+
+100% {
+  transform: translateX(-50%);
+}
+
+}
+
+/* FLOATING BUTTONS */
+
 .floating-buttons {
   position: fixed;
   bottom: 20px;
@@ -204,8 +297,15 @@ transform: scale(1.05);
   transform: scale(1.1);
 }
 
-.whatsapp { background: #25D366; }
-.facebook { background: #1877f2; }
+.whatsapp {
+  background: #25D366;
+}
+
+.facebook {
+  background: #1877f2;
+}
+
+/* FOOTER */
 
 footer {
   background: #3e2f1c;
@@ -224,10 +324,25 @@ footer {
   50% { transform: translateX(10px); }
   100% { transform: translateX(-10px); }
 }
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+.carousel-track img {
+  width: 240px;
+  height: 180px;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
+
+<!-- MENU -->
 
 <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
@@ -236,55 +351,83 @@ footer {
 <a href="#golden">Le Golden Retriever</a>
 <a href="#histoire">Histoire de la race</a>
 <a href="#chiens">Nos chiens</a>
+<a href="#galerie">Galerie</a>
 <a href="#contact">Contact</a>
 <a href="candidature.html">Réserver un chiot</a>
 </div>
 
-<header style="position:relative;height:300px;">
-<img src="images/chiens (21).jpg" style="width:100%;height:100%;object-fit:cover;">
-<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:white;text-align:center;">
-<h1>Amours de Goldinous</h1>
-<p>Élevage familial de Golden Retriever</p>
+<!-- HEADER -->
+
+<header style="position:relative;height:320px;">
+
+<img src="images/chiens (21).jpg"
+style="width:100%;height:100%;object-fit:cover;">
+
+<div style="
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+color:white;
+text-align:center;
+background:rgba(0,0,0,0.35);
+padding:25px;
+border-radius:20px;
+">
+
+<h1 style="color:white;margin:0;">
+Amours de Goldinous
+</h1>
+
+<p style="font-size:20px;">
+Élevage familial de Golden Retriever
+</p>
+
 </div>
+
 </header>
 
+<!-- BIENVENUE -->
+
 <section>
+
 <h2>Bienvenue</h2>
-<p>Bienvenue dans notre élevage familial passionné de Golden Retriever.</p>
-<p>Nos chiots sont élevés avec amour, pucés, vaccinés et suivis par notre vétérinaire.</p>
-<p>Une liste de réservation est ouverte dès la naissance.</p>
+
+<p>
+Bienvenue dans notre élevage familial passionné de Golden Retriever.
+</p>
+
+<p>
+Nos chiots sont élevés avec amour, socialisés dès leur plus jeune âge,
+pucés, vaccinés et suivis par notre vétérinaire.
+</p>
+
+<p>
+Une liste de réservation est ouverte dès la naissance.
+</p>
 
 <div style="text-align:center; margin-top:25px;">
+
 <a href="candidature.html" class="btn-reserver">
 🐾 Demande de réservation d’un chiot
 </a>
-</div>
-  <section style="
-background: linear-gradient(135deg,#fffaf0,#f3e4d0);
-border: 2px solid #e5d3b3;
-border-radius: 25px;
-padding: 35px;
-margin-top: 40px;
-box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-text-align: center;
-overflow: hidden;
-">
 
-<img src="images/portee-avril-2026.jpg" style="
-width: 100%;
-max-height: 450px;
-object-fit: cover;
-border-radius: 20px;
-margin-bottom: 25px;
-box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-">
+</div>
+
+<!-- PORTEE -->
+
+<div class="portee-section">
+
+<img src="images/portee-avril-2026.jpg">
 
 <h2 style="
-color:#8b5a2b;
+border:none;
 font-size:32px;
 margin-bottom:20px;
 ">
+
 🐾 Nouvelle portée disponible 🐾
+
 </h2>
 
 <p style="
@@ -307,53 +450,126 @@ Les demandes étant étudiées par ordre d’arrivée, nous vous invitons à com
 
 <div style="margin-top:30px;">
 
-<a href="candidature.html" style="
-background:#8b5a2b;
-color:white;
-padding:15px 28px;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
-font-size:17px;
-display:inline-block;
-box-shadow:0 5px 15px rgba(0,0,0,0.15);
-transition:0.3s;
-">
-
+<a href="candidature.html" class="btn-reserver">
 🐾 Réserver un chiot
-
 </a>
 
 </div>
 
+</div>
+
+<!-- CARROUSEL -->
+
+<section style="margin-top:40px;">
+
+<h2 style="
+text-align:center;
+font-size:30px;
+margin-bottom:25px;
+">
+
+🐾 Nos petits trésors 🐾
+
+</h2>
+
+<div class="carousel-container">
+
+<div class="carousel-track">
+
+<img src="images/chiot1.jpg">
+<img src="images/chiot2.jpg">
+<img src="images/chiot3.jpg">
+<img src="images/chiot4.jpg">
+<img src="images/chiot5.jpg">
+<img src="images/chiot6.jpg">
+<img src="images/chiot7.jpg">
+<img src="images/chiot8.jpg">
+<img src="images/chiot9.jpg">
+<img src="images/chiot10.jpg">
+
+<!-- duplication pour fluidité -->
+
+<img src="images/chiot1.jpg">
+<img src="images/chiot2.jpg">
+<img src="images/chiot3.jpg">
+<img src="images/chiot4.jpg">
+<img src="images/chiot5.jpg">
+
+</div>
+
+</div>
+
 </section>
 
 </section>
+
+<!-- GOLDEN -->
 
 <section id="golden" class="golden-section">
+
 <h2>Le Golden Retriever</h2>
-<p>Chien doux, intelligent et parfait pour la famille.</p>
-<p>Au-delà de sa gentillesse et de son caractère facile, le Golden Retriever est aussi un excellent chien de chasse.</p>
+
+<p>
+Chien doux, intelligent et parfait pour la famille.
+</p>
+
+<p>
+Au-delà de sa gentillesse et de son caractère facile,
+le Golden Retriever est également un excellent chien de chasse.
+</p>
+
 </section>
+
+<!-- HISTOIRE -->
 
 <section id="histoire" class="golden-section">
+
 <h2>Histoire de la race</h2>
-<p>Race développée en Angleterre pour le rapport du gibier.</p>
+
+<p>
+Le Golden Retriever a été développé en Angleterre afin de rapporter le gibier.
+Sa douceur, son intelligence et sa facilité d’apprentissage en font aujourd’hui
+l’un des chiens les plus appréciés au monde.
+</p>
+
 </section>
+
+<!-- NOS CHIENS -->
 
 <section id="chiens">
+
 <h2>Nos chiens</h2>
+
 <div class="cards">
-<div class="card"><img src="images/chiens (15).jpg"></div>
-<div class="card"><img src="images/chiens (25).jpg"></div>
-<div class="card"><img src="images/chiens (26).jpg"></div>
-<div class="card"><img src="images/chiens (28).jpg"></div>
+
+<div class="card">
+<img src="images/chiens (15).jpg">
 </div>
+
+<div class="card">
+<img src="images/chiens (25).jpg">
+</div>
+
+<div class="card">
+<img src="images/chiens (26).jpg">
+</div>
+
+<div class="card">
+<img src="images/chiens (28).jpg">
+</div>
+
+</div>
+
 </section>
 
+<!-- GALERIE -->
+
 <section id="galerie">
+
 <h2>Galerie</h2>
+
 <div class="gallery">
+
 <img src="images/chiens (18).jpg" onclick="openLightbox(this.src)">
 <img src="images/chiens (2).jpg" onclick="openLightbox(this.src)">
 <img src="images/chiens (3).jpg" onclick="openLightbox(this.src)">
@@ -362,54 +578,105 @@ transition:0.3s;
 <img src="images/chiens (20).jpg" onclick="openLightbox(this.src)">
 <img src="images/chiens (21).jpg" onclick="openLightbox(this.src)">
 <img src="images/chiens (24).jpg" onclick="openLightbox(this.src)">
+
 </div>
+
 </section>
 
+<!-- CONTACT -->
+
 <section id="contact">
+
 <h2>Contact</h2>
 
-<form action="https://formspree.io/f/xqewgoww" method="POST" class="contact-form">
-<input type="text" name="nom" placeholder="Nom" required>
-<input type="email" name="email" placeholder="Email" required>
-<textarea name="message" placeholder="Votre message" required></textarea>
+<form action="https://formspree.io/f/xqewgoww"
+method="POST"
+class="contact-form">
+
+<input type="text"
+name="nom"
+placeholder="Nom"
+required>
+
+<input type="email"
+name="email"
+placeholder="Email"
+required>
+
+<textarea name="message"
+placeholder="Votre message"
+required></textarea>
+
 <input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_replyto" value="email">
 
-<button type="submit">Envoyer</button>
+<input type="hidden"
+name="_subject"
+value="Nouveau message du site Amours de Goldinous">
 
-<p style="font-size:12px; text-align:center;">
+<button type="submit">
+Envoyer
+</button>
+
+<p style="font-size:12px;text-align:center;">
 Nous vous répondrons rapidement par email.
 </p>
 
-<input type="hidden" name="_next" value="https://albilaurent.github.io/site-golden/#contact">
-<input type="hidden" name="_subject" value="Nouveau message du site Amours de Goldinous">
 </form>
 
 </section>
 
+<!-- FOOTER -->
+
 <footer>
+
 <div>🐾 Amours de Goldinous 🐾</div>
-<div class="paws">🐾 🐾 🐾 🐾 🐾</div>
-<div>Contact : amoursdegoldinous@gmail.com</div>
-<p>amours des goldinous @ 2026</p>
+
+<div class="paws">
+🐾 🐾 🐾 🐾 🐾
+</div>
+
+<div>
+Contact : amoursdegoldinous@gmail.com
+</div>
+
+<p>
+Amours de Goldinous © 2026
+</p>
+
 </footer>
 
+<!-- FLOATING BUTTONS -->
+
 <div class="floating-buttons">
-<a href="https://wa.me/32497642611?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20vos%20chiots" class="whatsapp" target="_blank">
+
+<a href="https://wa.me/32497642611?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20vos%20chiots"
+class="whatsapp"
+target="_blank">
+
 <i class="fab fa-whatsapp"></i>
+
 </a>
 
-<a href="https://www.facebook.com/profile.php?id=61555150700118" class="facebook" target="_blank">
+<a href="https://www.facebook.com/profile.php?id=61555150700118"
+class="facebook"
+target="_blank">
+
 <i class="fab fa-facebook-f"></i>
+
 </a>
+
 </div>
 
 <!-- LIGHTBOX -->
+
 <div id="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img">
+<img id="lightbox-img">
 </div>
 
+<!-- SCRIPT -->
+
 <script>
+
 function toggleMenu() {
   document.getElementById("menu").classList.toggle("active");
 }
@@ -422,6 +689,7 @@ function openLightbox(src) {
 function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
 }
+
 </script>
 
 </body>
